@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
-import { StaffService } from '../../../services/staff.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StaffService } from '../../../services/staff.service';
 
 @Component({
   selector: 'app-edit-user',
