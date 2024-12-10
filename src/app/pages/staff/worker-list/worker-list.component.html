@@ -4,8 +4,8 @@
     <div class="staff d-flex justify-content-center flex-wrap gap-3">
         @for (staff of allStaff; track staff.id) {
         @if(staff.role === 'admin') {
-        <div class="card text-center p-4" style="width: 18rem;">
-            <h4 class="mt-3 mb-4">{{staff.name}} {{staff.surnames}}</h4>
+        <div class="card text-center p-4" style="width: 18rem;" [routerLink]="[staff.id]">
+            <h4 class=" mt-3 mb-4">{{staff.name}} {{staff.surnames}}</h4>
             <p><b>Email</b></p>
             <p>{{staff.email}}</p>
         </div>
@@ -17,7 +17,7 @@
     <div class="staff d-flex justify-content-center flex-wrap gap-3">
         @for (staff of allStaff; track staff.id) {
         @if(staff.role === 'worker') {
-        <div class="card text-center p-4" style="width: 18rem;" [routerLink]="['/edit']">
+        <div class="card text-center p-4" style="width: 18rem;" [routerLink]="[staff.id]">
             <h4 class="mt-3 mb-4">{{staff.name}} {{staff.surnames}}</h4>
             <p><b>Email</b></p>
             <p>{{staff.email}}</p>

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { IUser } from '../../../interfaces/iuser.interface';
 import { StaffService } from '../../../services/staff.service';
 import { RouterLink } from '@angular/router';
-import { lastValueFrom } from 'rxjs';
+
 
 
 @Component({
@@ -25,5 +25,13 @@ export class WorkerListComponent {
     }
   }
 
+  isOpen = false;
 
+  openSidebar() {
+    this.isOpen = true;
+  }
+
+  closeSidebar() {
+    this.isOpen = false;
+  }
 }

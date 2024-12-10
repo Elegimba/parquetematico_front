@@ -1,6 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { StaffService } from '../../../services/staff.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -14,6 +15,7 @@ export class EditUserComponent {
   @Input() userId: string = ''
 
   staffServices = inject(StaffService)
+  router = inject(Router)
 
 
   formEdit: FormGroup = new FormGroup({
@@ -41,7 +43,7 @@ export class EditUserComponent {
     try {
       await this.staffServices.updateById(this.userId, this.formEdit.value)
       this
-
+      this.router.navigateByUrl('/users')
     } catch (error) {
 
     }

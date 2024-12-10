@@ -37,4 +37,11 @@ export class StaffService {
     )
   }
 
+  deleteById(userId: string): Promise<IUser> {
+    return lastValueFrom(
+      this.httpClient.delete<IUser>(`${this.baseUrl}/${userId}`)
+    )
+  }
+
+
 }
