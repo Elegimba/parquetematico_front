@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="container col-md-5 mt-5 p-4 rounded shadow-lg" style="background-color: #f9f9f9;">
+    <div class="text-center mb-4">
+        <h3 class="text-primary">Inicia Sesión</h3>
+        <p class="text-muted">Accede a tu cuenta</p>
+    </div>
+    <form action="" [formGroup]="logForm" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" id="email" class="form-control" formControlName="email"
+                placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" id="password" class="form-control" formControlName="password" placeholder="••••••••">
+        </div>
+
+        <div class="d-grid">
+            <input type="submit" class="btn btn-primary" value="Iniciar Sesión">
+        </div>
+    </form>
+    <div class="text-center mt-3">
+        <p class="text-muted">
+            ¿Olvidaste tu contraseña? <a href="#" class="text-primary">Recupérala aquí</a>
+        </p>
+    </div>
+</div>

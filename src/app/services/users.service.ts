@@ -9,7 +9,7 @@ type regBody = {
   email: string
 }
 type loginResponse = {
-  success: string,
+  message: string,
   token: string
 }
 

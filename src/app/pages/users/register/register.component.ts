@@ -52,13 +52,17 @@ export class RegisterComponent {
   async register() {
     try {
       if (this.refForm.valid) {
-        await this.userService.register(this.refForm.value)
+        const response = await this.userService.register(this.refForm.value)
         Swal.fire({
           title: 'Bienvenido!',
-          text: 'Registrado con exito',
+          text: response.message,
           icon: 'success',
-          confirmButtonText: 'Ok!',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate(['/login']);
+          }
         })
+
       } else {
         Swal.fire({
           title: 'Error!',

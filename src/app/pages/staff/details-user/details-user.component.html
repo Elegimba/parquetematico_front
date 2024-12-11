@@ -1,15 +1,15 @@
-@if(user){
+@if(user) {
 <div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow-lg" style="width: 24rem;">
+    <div class="card p-4 shadow-lg rounded" style="width: 24rem; border: none;">
         <div class="card-body text-center">
-            <h5 class="card-title mb-4">Información del Usuario</h5>
+            <h5 class="card-title mb-4 text-primary">Información del Usuario</h5>
             <p class="card-text mb-3"><strong>Nombre:</strong> {{ user.name }}</p>
             <p class="card-text mb-3"><strong>Apellidos:</strong> {{ user.surnames }}</p>
             <p class="card-text mb-3"><strong>Email:</strong> {{ user.email }}</p>
         </div>
-        <div class="card-footer d-flex justify-content-around mt-3">
-            <button class="btn btn-secondary" [routerLink]="['/users']">Atrás</button>
-            <button class="btn btn-danger" (click)="deleteUser(userId)">Eliminar</button>
+        <div class="card-footer d-flex justify-content-around mt-3 bg-white border-top-0">
+            <button class="btn btn-outline-secondary" [routerLink]="['/users']">Atrás</button>
+            <button class="btn btn-outline-danger" (click)="deleteUser(userId)">Eliminar</button>
             <button class="btn btn-primary" [routerLink]="['/users', 'edit', user.id]">Modificar</button>
         </div>
     </div>

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+body {
+
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: 'Montserrat', sans-serif;
+}

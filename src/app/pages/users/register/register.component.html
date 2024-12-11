@@ -1,25 +1,50 @@
-<div class="container col-5 p-3">
-    <h1>Registro Usuario</h1>
-    <form action="" [formGroup]="refForm" (ngSubmit)="register()">
-        <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" formControlName="name">
-        <label class="form-label">Apellidos</label>
-        <input type="text" class="form-control" formControlName="surnames">
-        <label class="form-label">Email</label>
-        <input type="text" class="form-control" formControlName="email">
-        @if(checkError('email', 'pattern')){
-        <p class="error">El campo email es incorrecto</p>
-        }
-        <label class="form-label">Contraseña</label>
-        <input type="password" class="form-control" formControlName="password">
-        <label class="form-label">Confirmar Contraseña</label>
-        <input type="password" class="form-control" formControlName="confirmPassword">
-        @if(refForm.get('password')?.errors?.['minlength']) {
-        <p class="error"><small>La contraseña debe tener mas de 6 caracteres.</small></p>
-        }
-        @if (refForm.get('password')?.value !== refForm.get('confirmPassword')?.value) {
-        <p class="error"><small>Las contraseñas no coinciden.</small></p>
-        }
-        <input type="submit" class="btn btn-primary m-3">
+<div class="container col-lg-5 col-md-8 col-sm-10 mt-5 p-4 rounded shadow-lg" style="background-color: #f9f9f9;">
+    <h1 class="text-center text-primary mb-4">Registro de Usuario</h1>
+    <form [formGroup]="refForm" (ngSubmit)="register()">
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" id="name" class="form-control" formControlName="name" placeholder="Ingresa tu nombre">
+        </div>
+
+        <div class="mb-3">
+            <label for="surnames" class="form-label">Apellidos</label>
+            <input type="text" id="surnames" class="form-control" formControlName="surnames"
+                placeholder="Ingresa tus apellidos">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" formControlName="email"
+                placeholder="correo@ejemplo.com">
+
+            @if(refForm.get('email')?.errors?.['pattern']) {
+            <p class="text-danger"><small>El campo email es incorrecto.</small></p>
+            }
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" id="password" class="form-control" formControlName="password"
+                placeholder="Ingresa tu contraseña">
+
+            @if(refForm.get('password')?.errors?.['minlength']) {
+            <p class="text-danger"><small>La contraseña debe tener más de 6 caracteres.</small></p>
+            }
+        </div>
+
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+            <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword"
+                placeholder="Confirma tu contraseña">
+
+            @if (refForm.get('password')?.value !== refForm.get('confirmPassword')?.value) {
+            <p class="text-danger"><small>Las contraseñas no coinciden.</small></p>
+            }
+        </div>
+
+        <div class="d-grid">
+            <input type="submit" class="btn btn-primary" value="Registrar">
+        </div>
     </form>
 </div>
