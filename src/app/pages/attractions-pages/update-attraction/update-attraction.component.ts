@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AttractionsService } from '../../../services/attractions.service';
 import { Router, RouterLink } from '@angular/router';
 import { IAttraction } from '../../../interfaces/iattraction.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-attraction',
@@ -48,13 +49,16 @@ export class UpdateAttractionComponent {
   })
 
   async onSubmit() {
-    try {
-
-      await this.attractionsService.updateById(this.attractionId, this.formulario.value);
-      this.router.navigateByUrl(`attractions/details/${this.attractionId}`);
-    } catch ({ error }: any) {
-      console.log(error);
-      this.arrErrors = error;
+    const confirm = await Swal.fire({ title: 'Confirmar', text: '¿Guardar los cambios?', icon: 'question', confirmButtonText: 'Confirmar', showCancelButton: true });
+    if(confirm.isConfirmed) {
+      try {
+        await this.attractionsService.updateById(this.attractionId, this.formulario.value);
+        Swal.fire('Hecho', 'Los datos de la atracción se han actualizado', 'success');
+        this.router.navigateByUrl(`attractions/details/${this.attractionId}`);
+      } catch ({ error }: any) {
+        console.log(error);
+        this.arrErrors = error;
+      }
     }
   }
 
