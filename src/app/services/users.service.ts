@@ -27,4 +27,10 @@ export class UsersService {
     )
   }
 
+  login(body: regBody): Promise<loginResponse> {
+    return lastValueFrom(
+      this.httpClient.post<loginResponse>(`${this.baseUrl}/login`, body)
+    )
+  }
+
 }
