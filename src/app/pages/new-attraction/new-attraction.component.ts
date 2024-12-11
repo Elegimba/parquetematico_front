@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { AttractionsService } from '../../services/attractions.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -24,9 +24,18 @@ export class NewAttractionComponent {
     min_height: new FormControl(),
     average_duration: new FormControl(),
     wait_time: new FormControl(),
-    functional: new FormControl()
+    functional: new FormControl(false)
   })
 
+  async onSubmit() {
+    try {
 
+      const newAtt = await this.attractionsService.create(this.formulario.value);      
+      this.router.navigateByUrl(`attractions/details/${newAtt.id}`);      
+    } catch ({error}: any) {
+      console.log(error);
+      this.arrErrors = error;
+    }
+  }
 
 }

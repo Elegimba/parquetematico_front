@@ -1,6 +1,6 @@
 <div>
     <h2>Nueva Atracción</h2>
-    <form [formGroup]="formulario">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div>
             <label class="form-label"></label>
             <input type="text" class="form-control" formControlName="name">
