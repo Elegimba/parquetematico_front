@@ -1,5 +1,5 @@
 import { Component, inject, Input } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StaffService } from '../../../services/staff.service';
 
@@ -21,8 +21,22 @@ export class EditUserComponent {
   formEdit: FormGroup = new FormGroup({
     name: new FormControl(),
     surnames: new FormControl(),
-    email: new FormControl()
+    email: new FormControl(),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    confirmPassword: new FormControl('', [Validators.required, this.passwordValidator]),
   })
+
+  passwordValidator(form: AbstractControl) {
+    const passwordControl = form.get('password')
+    const repitePasswordControl = form.get('confirmPassword');
+
+    if (passwordControl?.value !== repitePasswordControl?.value) {
+      repitePasswordControl?.setErrors({ passwordvalidator: true });
+      return { passwordvalidator: true };
+    }
+
+    return null;
+  }
 
   async ngOnInit() {
     try {
@@ -30,7 +44,9 @@ export class EditUserComponent {
       this.formEdit.setValue({
         name: user.name,
         surnames: user.surnames,
-        email: user.email
+        email: user.email,
+        password: '',
+        confirmPassword: ''
 
       })
     } catch (error) {
@@ -41,8 +57,9 @@ export class EditUserComponent {
 
   async onSubmit() {
     try {
-      await this.staffServices.updateById(this.userId, this.formEdit.value)
-      this
+      if (this.formEdit.valid) {
+        await this.staffServices.updateById(this.userId, this.formEdit.value)
+      }
       this.router.navigateByUrl('/users')
     } catch (error) {
 

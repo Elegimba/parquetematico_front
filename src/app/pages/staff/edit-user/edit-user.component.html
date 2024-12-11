@@ -1,15 +1,42 @@
-<form [formGroup]="formEdit" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" formControlName="name">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Apellidos</label>
-        <input type="text" class="form-control" formControlName="surnames">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control" formControlName="email">
-    </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
+<div class="container col-lg-5 col-md-8 col-sm-10 mt-5 p-4 rounded shadow-lg" style="background-color: #f9f9f9;">
+    <h1 class="text-center text-primary mb-4">Editar Usuario</h1>
+    <form [formGroup]="formEdit" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+        </div>
+
+        <div class="mb-3">
+            <label for="surnames" class="form-label">Apellidos</label>
+            <input type="text" id="surnames" class="form-control" formControlName="surnames">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" formControlName="email">
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Nueva contraseña</label>
+            <input type="password" id="password" class="form-control" formControlName="password"
+                placeholder="Nueva contraseña">
+            @if(formEdit.get('password')?.errors?.['minlength']) {
+            <p class="text-danger"><small>La contraseña debe tener más de 6 caracteres.</small></p>
+            }
+        </div>
+
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirmar nueva contraseña</label>
+            <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword"
+                placeholder="Confirmar nueva contraseña">
+            @if (formEdit.get('password')?.value !== formEdit.get('confirmPassword')?.value) {
+            <p class="text-danger"><small>Las contraseñas no coinciden.</small></p>
+            }
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>

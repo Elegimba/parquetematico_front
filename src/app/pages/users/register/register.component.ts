@@ -28,12 +28,7 @@ export class RegisterComponent {
     return null;
   }
 
-  passwordMatch() {
-    if (this.refForm.get('password')?.value == this.refForm.get('confirmPassword')?.value) {
-      return true;
-    }
-    return false;
-  }
+
   refForm: FormGroup = new FormGroup({
 
     name: new FormControl('qwerty', [Validators.required]),
