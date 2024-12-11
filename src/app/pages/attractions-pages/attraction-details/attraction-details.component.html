@@ -1,0 +1,15 @@
+@if(attraction) {
+    <div class="attraction">
+        <h3>{{attraction.name}}</h3>
+        <p>Capacidad de la atracción: {{attraction.capacity}} plazas.</p>
+        <p>Altura mínima permitida: {{attraction.min_height}}cm.</p>
+        <p>Duración media de la atracción: {{attraction.average_duration}}min.</p>
+        <p>Tiempo de espera aproximado: {{attraction.wait_time}}min.</p>
+        <p>Disponibilidad de la atracción: <span [class]="{ working: attraction.functional, nWorking: !attraction.functional }">{{ attraction.functional ? 'Working ✔' : 'Disabled ❌' }}</span></p>
+        <div class="functionalButtons">
+            <button class="btn btn-info" [routerLink]="['/attractions/edit', attractionId]">Editar</button>
+            <button class="btn btn-danger" (click)="onClick()">Eliminar</button>
+            <button class="btn btn-secondary" [routerLink]="['/attractions']">Volver</button>
+        </div>
+    </div>
+}

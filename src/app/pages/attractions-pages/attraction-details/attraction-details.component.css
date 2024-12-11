@@ -1,0 +1,11 @@
+span {
+
+    .working {
+            color: black;
+            background-color: rgb(62, 202, 62);
+        }
+    
+        .nWorking {
+            background-color: rgb(240, 63, 63);
+        }
+}
