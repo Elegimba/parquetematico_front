@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-attraction-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './attraction-details.component.html',
   styleUrl: './attraction-details.component.css'
 })

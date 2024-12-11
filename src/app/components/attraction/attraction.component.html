@@ -1,5 +1,5 @@
 @if(attraction) {
-    <div class="card" [routerLink]="[attraction.id]">
+    <div class="card" [routerLink]="['details', attraction.id]">
         <figure>
             <div class="img">
 
@@ -7,8 +7,9 @@
         </figure>
         <div>
             <h2>{{attraction.name}}</h2>
-            <p *ngIf="attraction.functional" class="working">Working</p>
-            <p *ngIf="!attraction.functional" class="n-working">Disabled</p>
+            <p [class]="{ working: attraction.functional, nWorking: !attraction.functional }">
+                {{attraction.functional ? 'Working ✔' : 'Disabled ❌'}}
+            </p>
         </div>
     </div>
 }
