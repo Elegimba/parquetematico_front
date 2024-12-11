@@ -1,0 +1,41 @@
+<div>
+    <h2>Actualizar Atracción</h2>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div>
+            <label class="form-label"></label>
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div>
+            <label class="form-label"></label>
+            <input type="text" class="form-control" formControlName="capacity">
+        </div>
+        <div>
+            <label class="form-label"></label>
+            <input type="text" class="form-control" formControlName="min_height">
+        </div>
+        <div>
+            <label class="form-label"></label>
+            <input type="text" class="form-control" formControlName="average_duration">
+        </div>
+        <div>
+            <label class="form-label"></label>
+            <input type="text" class="form-control" formControlName="wait_time">
+        </div>
+        <div class="functionalSwitch">
+            <label class="switch">
+                <input type="checkbox" formControlName="functional">
+                <span class="slider round"></span>
+            </label>
+
+            <input type="submit" value="Actualizar" class="btn btn-info">
+        </div>
+
+
+    </form>
+</div>
+
+<div class="errores">
+    @for(err of arrErrors; track $index) {
+    <p>{{err.message}}</p>
+    }
+</div>

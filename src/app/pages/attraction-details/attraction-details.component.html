@@ -7,7 +7,7 @@
         <p>Tiempo de espera aproximado: {{attraction.wait_time}}min.</p>
         <p>Disponibilidad de la atracción: <span [class]="{ working: attraction.functional, nWorking: !attraction.functional }">{{ attraction.functional ? 'Working ✔' : 'Disabled ❌' }}</span></p>
         <div class="functionalButtons">
-            <button class="btn btn-info">Editar</button>
+            <button class="btn btn-info" [routerLink]="['/attractions/edit', attractionId]">Editar</button>
             <button class="btn btn-danger">Eliminar</button>
         </div>
     </div>

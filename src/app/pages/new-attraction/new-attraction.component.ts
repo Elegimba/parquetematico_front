@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { AttractionsService } from '../../services/attractions.service';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
