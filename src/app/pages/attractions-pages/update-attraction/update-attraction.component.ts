@@ -1,8 +1,8 @@
 import { Component, inject, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { AttractionsService } from '../../services/attractions.service';
+import { AttractionsService } from '../../../services/attractions.service';
 import { Router, RouterLink } from '@angular/router';
-import { IAttraction } from '../../interfaces/iattraction.interface';
+import { IAttraction } from '../../../interfaces/iattraction.interface';
 
 @Component({
   selector: 'app-update-attraction',

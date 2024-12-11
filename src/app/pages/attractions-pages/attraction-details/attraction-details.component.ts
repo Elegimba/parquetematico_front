@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
-import { IAttraction } from '../../interfaces/iattraction.interface';
-import { AttractionsService } from '../../services/attractions.service';
+import { IAttraction } from '../../../interfaces/iattraction.interface';
+import { AttractionsService } from '../../../services/attractions.service';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({

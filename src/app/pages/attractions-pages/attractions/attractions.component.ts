@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { IAttraction } from '../../interfaces/iattraction.interface';
-import { AttractionsService } from '../../services/attractions.service';
-import { AttractionComponent } from "../../components/attraction/attraction.component";
+import { IAttraction } from '../../../interfaces/iattraction.interface';
+import { AttractionsService } from '../../../services/attractions.service';
+import { AttractionComponent } from "../../../components/attraction/attraction.component";
 import { RouterLink } from '@angular/router';
 
 @Component({

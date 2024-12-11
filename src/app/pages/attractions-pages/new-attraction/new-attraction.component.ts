@@ -1,5 +1,5 @@
 import { Component, inject, Input } from '@angular/core';
-import { AttractionsService } from '../../services/attractions.service';
+import { AttractionsService } from '../../../services/attractions.service';
 import { Router, RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
