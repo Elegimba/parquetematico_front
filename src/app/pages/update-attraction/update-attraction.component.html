@@ -27,7 +27,10 @@
                 <span class="slider round"></span>
             </label>
 
-            <input type="submit" value="Actualizar" class="btn btn-info">
+            <div>
+                <input type="submit" value="Actualizar" class="btn btn-success">
+                <button class="btn btn-secondary" [routerLink]="['/attractions/details', attractionId]">Cancelar</button>
+            </div>
         </div>
 
 

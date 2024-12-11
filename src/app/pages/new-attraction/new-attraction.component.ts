@@ -1,12 +1,12 @@
 import { Component, inject, Input } from '@angular/core';
 import { AttractionsService } from '../../services/attractions.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-new-attraction',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './new-attraction.component.html',
   styleUrl: './new-attraction.component.css'
 })

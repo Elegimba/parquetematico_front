@@ -8,7 +8,8 @@
         <p>Disponibilidad de la atracción: <span [class]="{ working: attraction.functional, nWorking: !attraction.functional }">{{ attraction.functional ? 'Working ✔' : 'Disabled ❌' }}</span></p>
         <div class="functionalButtons">
             <button class="btn btn-info" [routerLink]="['/attractions/edit', attractionId]">Editar</button>
-            <button class="btn btn-danger">Eliminar</button>
+            <button class="btn btn-danger" (click)="onClick()">Eliminar</button>
+            <button class="btn btn-secondary" [routerLink]="['/attractions']">Volver</button>
         </div>
     </div>
 }
