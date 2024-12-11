@@ -2,6 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { AttractionsService } from '../../../services/attractions.service';
 import { Router, RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-attraction',
@@ -28,13 +29,17 @@ export class NewAttractionComponent {
   })
 
   async onSubmit() {
-    try {
+    const confirm = await Swal.fire({ title: 'Confirmar', text: 'Se añadirá una nueva atracción a la base de datos', icon: 'info', confirmButtonText: 'Confirmar', showCancelButton: true });
 
-      const newAtt = await this.attractionsService.create(this.formulario.value);      
-      this.router.navigateByUrl(`attractions/details/${newAtt.id}`);      
-    } catch ({error}: any) {
-      console.log(error);
-      this.arrErrors = error;
+    if(confirm.isConfirmed) {
+      try {
+        const newAtt = await this.attractionsService.create(this.formulario.value);
+        Swal.fire('Hecho', 'La nueva atracción se ha añadido al parque', 'success');
+        this.router.navigateByUrl(`attractions/details/${newAtt.id}`);
+      } catch ({error}: any) {
+        console.log(error);
+        this.arrErrors = error;
+      }
     }
   }
 
