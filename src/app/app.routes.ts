@@ -8,6 +8,7 @@ import { AttractionsComponent } from './pages/attractions-pages/attractions/attr
 import { AttractionDetailsComponent } from './pages/attractions-pages/attraction-details/attraction-details.component';
 import { NewAttractionComponent } from './pages/attractions-pages/new-attraction/new-attraction.component';
 import { UpdateAttractionComponent } from './pages/attractions-pages/update-attraction/update-attraction.component';
+import { AllCommentsComponent } from './pages/comments/all-comments/all-comments.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'users', pathMatch: 'full' },
@@ -19,5 +20,6 @@ export const routes: Routes = [
     { path: 'attractions', component: AttractionsComponent },
     { path: 'attractions/create', component: NewAttractionComponent },
     { path: 'attractions/edit/:attractionId', component: UpdateAttractionComponent },
-    { path: 'attractions/details/:attractionId', component: AttractionDetailsComponent }
+    { path: 'attractions/details/:attractionId', component: AttractionDetailsComponent },
+    { path: 'comments', component: AllCommentsComponent }
 ];

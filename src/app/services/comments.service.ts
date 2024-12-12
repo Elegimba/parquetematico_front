@@ -26,5 +26,11 @@ export class CommentsService {
     )
   }
 
+  /* getCommentByUser(userId: number) {
+    return lastValueFrom(
+      this.httpClient.get<>(`this`)
+    )
+  } */
+
   /* create(body: createComment) */
 }

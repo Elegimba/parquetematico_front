@@ -1,0 +1,5 @@
+<div class="container">
+    @for(comment of arrComments; track comment.users_id) {
+        <app-comment [comment]="comment"></app-comment>
+    }
+</div>
