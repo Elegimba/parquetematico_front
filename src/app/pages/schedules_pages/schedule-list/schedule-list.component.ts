@@ -5,6 +5,7 @@ import { IUser } from '../../../interfaces/iuser.interface';
 import { StaffService } from '../../../services/staff.service';
 import { DatePipe } from '@angular/common';
 
+
 @Component({
   selector: 'app-schedule-list',
   standalone: true,
@@ -32,4 +33,8 @@ export class ScheduleListComponent {
     }
   }
 
+  addComment() {
+
+
+  }
 }
