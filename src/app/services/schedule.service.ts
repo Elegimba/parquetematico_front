@@ -27,4 +27,10 @@ export class ScheduleService {
     )
   }
 
+  deleteSchedule(scheduleId: number) {
+    return lastValueFrom(
+      this.httpClient.delete<ISchedule>(`${this.baseUrl}/schedules/${scheduleId}`)
+    );
+  }
+
 }
