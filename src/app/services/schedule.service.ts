@@ -27,23 +27,23 @@ export class ScheduleService {
       this.httpClient.post<ISchedule>(`${this.baseUrl}/schedules`, body)
     )
   }
-
-
-
-
-
-
-
+  
   editScheduleById(scheduleId: string, body: ISchedule): Promise<ISchedule> {
     return lastValueFrom(
       this.httpClient.put<ISchedule>(`${this.baseUrl}/schedules/${scheduleId}`, body)
     )
   }
-
+  
   getScheduleById(scheduleId: string): Promise<ISchedule> {
     return lastValueFrom(
       this.httpClient.get<ISchedule>(`${this.baseUrl}/schedules/${scheduleId}`)
     )
   }
 
+  deleteSchedule(scheduleId: number) {
+    return lastValueFrom(
+      this.httpClient.delete<ISchedule>(`${this.baseUrl}/schedules/${scheduleId}`)
+    );
+  }
+  
 }
