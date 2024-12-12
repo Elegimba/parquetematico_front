@@ -3,8 +3,8 @@ import { IUser } from "./iuser.interface";
 
 export interface ISchedule {
     id?: number;
-    start_time: string;
-    end_time: string;
+    start_time: Date;
+    end_time: Date;
     attraction: IAttraction;
     users: IUser;
 }

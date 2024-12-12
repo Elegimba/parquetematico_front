@@ -12,6 +12,7 @@ export class ScheduleService {
 
   @Input() userId: string = '';
 
+
   private httpClient = inject(HttpClient);
   private baseUrl = `${environment.apiUrl}`;
 
@@ -24,6 +25,24 @@ export class ScheduleService {
   createSchedule(body: ISchedule): Promise<ISchedule> {
     return lastValueFrom(
       this.httpClient.post<ISchedule>(`${this.baseUrl}/schedules`, body)
+    )
+  }
+
+
+
+
+
+
+
+  editScheduleById(scheduleId: string, body: ISchedule): Promise<ISchedule> {
+    return lastValueFrom(
+      this.httpClient.put<ISchedule>(`${this.baseUrl}/schedules/${scheduleId}`, body)
+    )
+  }
+
+  getScheduleById(scheduleId: string): Promise<ISchedule> {
+    return lastValueFrom(
+      this.httpClient.get<ISchedule>(`${this.baseUrl}/schedules/${scheduleId}`)
     )
   }
 

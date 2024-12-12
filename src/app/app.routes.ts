@@ -12,6 +12,7 @@ import { ScheduleListComponent } from './pages/schedules_pages/schedule-list/sch
 
 import { AllCommentsComponent } from './pages/comments/all-comments/all-comments.component';
 import { CreateScheduleComponent } from './pages/schedules_pages/create-schedule/create-schedule.component';
+import { EditScheduleComponent } from './pages/schedules_pages/edit-schedule/edit-schedule.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'users', pathMatch: 'full' },
@@ -26,5 +27,6 @@ export const routes: Routes = [
     { path: 'attractions/details/:attractionId', component: AttractionDetailsComponent },
     { path: 'comments', component: AllCommentsComponent },
     { path: ':userId/schedules', component: ScheduleListComponent },
-    { path: 'schedules/create', component: CreateScheduleComponent }
+    { path: 'schedules/create', component: CreateScheduleComponent },
+    { path: 'schedules/:scheduleId', component: EditScheduleComponent }
 ];
