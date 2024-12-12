@@ -8,6 +8,8 @@ import { AttractionsComponent } from './pages/attractions-pages/attractions/attr
 import { AttractionDetailsComponent } from './pages/attractions-pages/attraction-details/attraction-details.component';
 import { NewAttractionComponent } from './pages/attractions-pages/new-attraction/new-attraction.component';
 import { UpdateAttractionComponent } from './pages/attractions-pages/update-attraction/update-attraction.component';
+import { ScheduleListComponent } from './pages/schedules_pages/schedule-list/schedule-list.component';
+
 
 export const routes: Routes = [
     { path: '', redirectTo: 'users', pathMatch: 'full' },
@@ -19,5 +21,6 @@ export const routes: Routes = [
     { path: 'attractions', component: AttractionsComponent },
     { path: 'attractions/create', component: NewAttractionComponent },
     { path: 'attractions/edit/:attractionId', component: UpdateAttractionComponent },
-    { path: 'attractions/details/:attractionId', component: AttractionDetailsComponent }
+    { path: 'attractions/details/:attractionId', component: AttractionDetailsComponent },
+    { path: ':userId/schedules', component: ScheduleListComponent },
 ];

@@ -1,0 +1,12 @@
+<div>
+    <h1>{{user?.name}}</h1>
+    @for(schedule of schedules; track schedule.id){
+    <div>
+        <p>{{schedule.attraction.name}}</p>
+        <p>{{schedule.start_time | date: 'medium' }}</p>
+        <p>{{schedule.end_time | date: 'medium' }}</p>
+    </div>
+
+    }
+
+</div>
