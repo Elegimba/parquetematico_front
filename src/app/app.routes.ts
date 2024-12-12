@@ -11,6 +11,7 @@ import { UpdateAttractionComponent } from './pages/attractions-pages/update-attr
 import { ScheduleListComponent } from './pages/schedules_pages/schedule-list/schedule-list.component';
 
 import { AllCommentsComponent } from './pages/comments/all-comments/all-comments.component';
+import { CreateScheduleComponent } from './pages/schedules_pages/create-schedule/create-schedule.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'users', pathMatch: 'full' },
@@ -24,5 +25,6 @@ export const routes: Routes = [
     { path: 'attractions/edit/:attractionId', component: UpdateAttractionComponent },
     { path: 'attractions/details/:attractionId', component: AttractionDetailsComponent },
     { path: 'comments', component: AllCommentsComponent },
-    { path: ':userId/schedules', component: ScheduleListComponent }
+    { path: ':userId/schedules', component: ScheduleListComponent },
+    { path: 'schedules/create', component: CreateScheduleComponent }
 ];

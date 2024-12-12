@@ -1,0 +1,29 @@
+<form [formGroup]="newSchedule" (ngSubmit)="onSubmit()">
+    <div>
+        <label class="form-label">Hora Inicio</label>
+        <input type="datetime-local" class="form-control" formControlName="start_time">
+    </div>
+    <div>
+        <label class="form-label">Hora Final</label>
+        <input type="datetime-local" class="form-control" formControlName="end_time">
+    </div>
+    <div>
+        <label class="form-label">Atraccion</label>
+        <select formControlName="attractions_id">
+            @for(attraction of arrAttractions; track attraction){
+            <option [value]="attraction.id">{{attraction.name}}</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label class="form-label">Workers</label>
+        <select formControlName="users_id">
+            @for(worker of arrWorkers; track worker){
+            <option [value]="worker.id">{{worker.name}}</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Aceptar">
+
+</form>

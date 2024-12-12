@@ -21,5 +21,10 @@ export class ScheduleService {
     );
   }
 
+  createSchedule(body: ISchedule): Promise<ISchedule> {
+    return lastValueFrom(
+      this.httpClient.post<ISchedule>(`${this.baseUrl}/schedules`, body)
+    )
+  }
 
 }
