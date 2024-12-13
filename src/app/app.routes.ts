@@ -9,13 +9,12 @@ import { AttractionDetailsComponent } from './pages/attractions-pages/attraction
 import { NewAttractionComponent } from './pages/attractions-pages/new-attraction/new-attraction.component';
 import { UpdateAttractionComponent } from './pages/attractions-pages/update-attraction/update-attraction.component';
 import { ScheduleListComponent } from './pages/schedules_pages/schedule-list/schedule-list.component';
-
 import { AllCommentsComponent } from './pages/comments/all-comments/all-comments.component';
 import { CreateScheduleComponent } from './pages/schedules_pages/create-schedule/create-schedule.component';
 import { EditScheduleComponent } from './pages/schedules_pages/edit-schedule/edit-schedule.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'users', pathMatch: 'full' },
+    { path: '', pathMatch: 'full', redirectTo: '/users' },
     { path: 'users', component: WorkerListComponent },
     { path: 'users/:userId', component: DetailsUserComponent },
     { path: 'users/edit/:userId', component: EditUserComponent },
@@ -28,5 +27,6 @@ export const routes: Routes = [
     { path: 'comments', component: AllCommentsComponent },
     { path: ':userId/schedules', component: ScheduleListComponent },
     { path: 'schedules/create', component: CreateScheduleComponent },
-    { path: 'schedules/:scheduleId', component: EditScheduleComponent }
+    { path: 'schedules/:scheduleId', component: EditScheduleComponent },
+    { path: '**', redirectTo: '/users' }
 ];
