@@ -15,9 +15,11 @@ import { CreateScheduleComponent } from './pages/schedules_pages/create-schedule
 import { EditScheduleComponent } from './pages/schedules_pages/edit-schedule/edit-schedule.component';
 import { roleGuard } from './guards/role.guard';
 import { authGuard } from './guards/auth.guard';
+import { MainComponent } from './pages/main/main.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'users', pathMatch: 'full' },
+    { path: 'main', component: MainComponent },
     { path: 'users', component: WorkerListComponent, canActivate: [authGuard] },
     { path: 'users/:userId', component: DetailsUserComponent, canActivate: [authGuard] },
     { path: 'users/edit/:userId', component: EditUserComponent, canActivate: [authGuard] },
