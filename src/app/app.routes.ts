@@ -9,7 +9,6 @@ import { AttractionDetailsComponent } from './pages/attractions-pages/attraction
 import { NewAttractionComponent } from './pages/attractions-pages/new-attraction/new-attraction.component';
 import { UpdateAttractionComponent } from './pages/attractions-pages/update-attraction/update-attraction.component';
 import { ScheduleListComponent } from './pages/schedules_pages/schedule-list/schedule-list.component';
-
 import { AllCommentsComponent } from './pages/comments/all-comments/all-comments.component';
 import { CreateScheduleComponent } from './pages/schedules_pages/create-schedule/create-schedule.component';
 import { EditScheduleComponent } from './pages/schedules_pages/edit-schedule/edit-schedule.component';
@@ -18,7 +17,7 @@ import { authGuard } from './guards/auth.guard';
 import { MainComponent } from './pages/main/main.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'users', pathMatch: 'full' },
+    { path: '', pathMatch: 'full', redirectTo: '/users' },
     { path: 'main', component: MainComponent },
     { path: 'users', component: WorkerListComponent, canActivate: [authGuard] },
     { path: 'users/:userId', component: DetailsUserComponent, canActivate: [authGuard] },
@@ -32,5 +31,6 @@ export const routes: Routes = [
     { path: 'comments', component: AllCommentsComponent, canActivate: [authGuard] },
     { path: ':userId/schedules', component: ScheduleListComponent, canActivate: [authGuard] },
     { path: 'schedules/create', component: CreateScheduleComponent, canActivate: [roleGuard, authGuard] },
-    { path: 'schedules/:scheduleId', component: EditScheduleComponent, canActivate: [authGuard] }
+    { path: 'schedules/:scheduleId', component: EditScheduleComponent, canActivate: [authGuard] },
+    { path: '**', redirectTo: '/users' }
 ];
