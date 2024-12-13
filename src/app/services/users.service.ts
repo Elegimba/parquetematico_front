@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { lastValueFrom } from 'rxjs';
+import { jwtDecode, JwtPayload } from 'jwt-decode';
 
 type regBody = {
   password: string,
@@ -11,6 +12,9 @@ type regBody = {
 type loginResponse = {
   message: string,
   token: string
+}
+interface CustomPayload extends JwtPayload {
+  user_role: string;
 }
 
 @Injectable({
@@ -33,4 +37,9 @@ export class UsersService {
     )
   }
 
+  isAdmin(): boolean {
+    const token = localStorage.getItem('aptk')!;
+    const data = jwtDecode<CustomPayload>(token);
+    return data.user_role !== 'admin' ? false : true;
+  }
 }

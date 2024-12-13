@@ -13,20 +13,22 @@ import { ScheduleListComponent } from './pages/schedules_pages/schedule-list/sch
 import { AllCommentsComponent } from './pages/comments/all-comments/all-comments.component';
 import { CreateScheduleComponent } from './pages/schedules_pages/create-schedule/create-schedule.component';
 import { EditScheduleComponent } from './pages/schedules_pages/edit-schedule/edit-schedule.component';
+import { roleGuard } from './guards/role.guard';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'users', pathMatch: 'full' },
-    { path: 'users', component: WorkerListComponent },
-    { path: 'users/:userId', component: DetailsUserComponent },
-    { path: 'users/edit/:userId', component: EditUserComponent },
+    { path: 'users', component: WorkerListComponent, canActivate: [authGuard] },
+    { path: 'users/:userId', component: DetailsUserComponent, canActivate: [authGuard] },
+    { path: 'users/edit/:userId', component: EditUserComponent, canActivate: [authGuard] },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'attractions', component: AttractionsComponent },
-    { path: 'attractions/create', component: NewAttractionComponent },
-    { path: 'attractions/edit/:attractionId', component: UpdateAttractionComponent },
+    { path: 'attractions/create', component: NewAttractionComponent, canActivate: [roleGuard, authGuard] },
+    { path: 'attractions/edit/:attractionId', component: UpdateAttractionComponent, canActivate: [authGuard] },
     { path: 'attractions/details/:attractionId', component: AttractionDetailsComponent },
-    { path: 'comments', component: AllCommentsComponent },
-    { path: ':userId/schedules', component: ScheduleListComponent },
-    { path: 'schedules/create', component: CreateScheduleComponent },
-    { path: 'schedules/:scheduleId', component: EditScheduleComponent }
+    { path: 'comments', component: AllCommentsComponent, canActivate: [authGuard] },
+    { path: ':userId/schedules', component: ScheduleListComponent, canActivate: [authGuard] },
+    { path: 'schedules/create', component: CreateScheduleComponent, canActivate: [roleGuard, authGuard] },
+    { path: 'schedules/:scheduleId', component: EditScheduleComponent, canActivate: [authGuard] }
 ];

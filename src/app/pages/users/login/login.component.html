@@ -15,7 +15,9 @@
             <label for="password" class="form-label">Contraseña</label>
             <input type="password" id="password" class="form-control" formControlName="password" placeholder="••••••••">
         </div>
-
+        <div>
+            <p class="error"><small>{{errorLogin}}</small></p>
+        </div>
         <div class="d-grid">
             <input type="submit" class="btn btn-primary" value="Iniciar Sesión">
         </div>

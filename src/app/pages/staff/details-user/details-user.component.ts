@@ -3,6 +3,7 @@ import { StaffService } from '../../../services/staff.service';
 import { IUser } from '../../../interfaces/iuser.interface';
 import { Router, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
+import { UsersService } from '../../../services/users.service';
 
 @Component({
   selector: 'app-details-user',
@@ -16,6 +17,7 @@ export class DetailsUserComponent {
   @Input() userId: string = ''
 
   staffServices = inject(StaffService)
+  userServices = inject(UsersService)
   router = inject(Router)
 
   user: IUser | null = null

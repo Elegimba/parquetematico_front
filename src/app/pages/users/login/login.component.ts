@@ -16,6 +16,9 @@ export class LoginComponent {
   usersServices = inject(UsersService)
   router = inject(Router)
 
+  arrErrores: { field: string, message: string }[] = []
+
+  errorLogin: string = ''
 
   logForm: FormGroup = new FormGroup({
     email: new FormControl(),
@@ -33,12 +36,11 @@ export class LoginComponent {
           icon: 'success'
         }
       )
-
       localStorage.setItem('aptk', response.token)
       this.router.navigateByUrl('/users')
 
-    } catch (error) {
-
+    } catch ({ error }: any) {
+      this.errorLogin = error.message
     }
   }
 }
