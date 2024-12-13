@@ -1,5 +1,10 @@
-<button [routerLink]="['create']">Create*</button> <!-- Sobra -->
 <div class="container">
+    @if(usersService.isAdmin()) {
+        <div class="nuevatt">
+            <button [routerLink]="['create']">ADD</button>
+            <h3>Nueva atracción</h3>
+        </div>
+    }
     @for(att of arrAttractions; track att.id) {
         <app-attraction [attraction]="att"></app-attraction>
     }

@@ -3,6 +3,7 @@ import { IAttraction } from '../../../interfaces/iattraction.interface';
 import { AttractionsService } from '../../../services/attractions.service';
 import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
+import { UsersService } from '../../../services/users.service';
 
 @Component({
   selector: 'app-attraction-details',
@@ -19,6 +20,7 @@ export class AttractionDetailsComponent {
   router = inject(Router)
 
   attractionsService = inject(AttractionsService);
+  usersService = inject(UsersService);
 
   async ngOnInit() {
     try {
