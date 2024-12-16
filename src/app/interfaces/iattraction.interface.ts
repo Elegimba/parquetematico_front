@@ -6,4 +6,5 @@ export interface IAttraction {
     wait_time: number;
     functional: boolean;
     name: string;
+    image: string;
 }

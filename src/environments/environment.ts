@@ -1,3 +1,4 @@
 export const environment = {
-    apiUrl: 'POR DETERMINAR'
+    apiUrl: 'POR DETERMINAR',
+    imagesUrl: 'POR DETERMINAR'
 };
