@@ -1,25 +1,25 @@
 <div>
-    <h2>Nueva Atracción</h2>
+    <h2 class="mb-4">Nueva Atracción</h2>
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div>
-            <label class="form-label"></label>
-            <input type="text" class="form-control" formControlName="name">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control mb-4" formControlName="name">
         </div>
         <div>
-            <label class="form-label"></label>
-            <input type="text" class="form-control" formControlName="capacity">
+            <label class="form-label">Capacidad máxima</label>
+            <input type="text" class="form-control mb-4" formControlName="capacity">
         </div>
         <div>
-            <label class="form-label"></label>
-            <input type="text" class="form-control" formControlName="min_height">
+            <label class="form-label">Estatura mínima permitida</label>
+            <input type="text" class="form-control mb-4" formControlName="min_height">
         </div>
         <div>
-            <label class="form-label"></label>
-            <input type="text" class="form-control" formControlName="average_duration">
+            <label class="form-label">Duración estimada</label>
+            <input type="text" class="form-control mb-4" formControlName="average_duration">
         </div>
         <div>
-            <label class="form-label"></label>
-            <input type="text" class="form-control" formControlName="wait_time">
+            <label class="form-label">Tiempo de espera estimado</label>
+            <input type="text" class="form-control mb-4" formControlName="wait_time">
         </div>
         <div class="functionalSwitch">
             <label class="switch">

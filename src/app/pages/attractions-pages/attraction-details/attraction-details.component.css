@@ -1,3 +1,14 @@
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    width: 800px;
+    
+}
+
 span {
 
     .working {

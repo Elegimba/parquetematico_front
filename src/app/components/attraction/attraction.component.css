@@ -6,11 +6,23 @@
     figure {
         cursor: pointer;
 
-        div {
+
+        .img-container {
             width: 100%;
             height: 200px;
             border: 1px solid black;
             border-radius: 15px;
+            overflow: hidden;
+            
+            
+            .img {
+                /* display: block;
+                height: 200px;
+                object-position: center; */
+                background-size: cover;
+                background-position: center;
+            }
+
         }
     }
 
@@ -41,6 +53,12 @@
 
     &:hover {
         transform: scale(105%);
+
+        .img {
+            transform: rotate(5deg) scale(110%);
+            transition: 8s;
+        }
     }
+
 
 }

@@ -4,6 +4,7 @@ import { AttractionsService } from '../../../services/attractions.service';
 import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
 import { UsersService } from '../../../services/users.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-attraction-details',
@@ -21,6 +22,7 @@ export class AttractionDetailsComponent {
 
   attractionsService = inject(AttractionsService);
   usersService = inject(UsersService);
+  imageUrl = environment.imagesUrl;
 
   async ngOnInit() {
     try {

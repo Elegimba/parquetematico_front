@@ -1,6 +1,9 @@
 @if(attraction) {
     <div class="attraction">
         <h3>{{attraction.name}}</h3>
+        <figure>
+            <img [src]="imageUrl + '/' + attraction.image" alt="">
+        </figure>
         <p>Capacidad de la atracción: {{attraction.capacity}} plazas.</p>
         <p>Altura mínima permitida: {{attraction.min_height}}cm.</p>
         <p>Duración media de la atracción: {{attraction.average_duration}}min.</p>

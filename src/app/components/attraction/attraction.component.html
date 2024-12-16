@@ -1,8 +1,10 @@
 @if(attraction) {
     <div class="card">
         <figure [routerLink]="['details', attraction.id]">
-            <div class="img">
-                <img [src]="imageUrl + '/' + attraction.image" alt="">
+            <div class="img-container">
+                <div class="img" [style.background-image]="'url(' + imageUrl + '/' + attraction.image + ')'">
+                    <!-- <img [src]="imageUrl + '/' + attraction.image" alt=""> -->
+                </div>
             </div>
         </figure>
         <div>
@@ -13,3 +15,4 @@
         </div>
     </div>
 }
+
