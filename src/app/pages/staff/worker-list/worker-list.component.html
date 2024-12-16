@@ -1,4 +1,4 @@
-<div class="container mt-5 p-4 rounded shadow-lg">
+<!-- <div class="container mt-5 p-4 rounded shadow-lg">
     <h1 class="text-center  mb-5">Equipo</h1>
     <h2 class="text-center mb-4">Administradores</h2>
     <div class="staff d-flex justify-content-center flex-wrap gap-3">
@@ -27,6 +27,41 @@
                 <p class="mb-1"><b>Email:</b></p>
                 <p class="text-muted">{{staff.email}}</p>
                 <a class="btn btn-outline-primary mt-3" [routerLink]="[staff.id]">Ver Detalles</a>
+            </div>
+        </div>
+        }
+        }
+    </div>
+</div> -->
+
+<div class="custom-container">
+    <h1 class="text-center custom-title">Equipo</h1>
+    <h2 class="text-center custom-subtitle">Administradores</h2>
+    <div class="staff custom-staff">
+        @for (staff of allStaff; track staff.id) {
+        @if(staff.role === 'admin') {
+        <div class="card custom-card">
+            <div class="card-body">
+                <h4 class="card-title">{{staff.name}} {{staff.surnames}}</h4>
+                <p class="card-email"><b>Email:</b></p>
+                <p class="card-text">{{staff.email}}</p>
+                <a class="custom-btn" [routerLink]="[staff.id]">Ver Detalles</a>
+            </div>
+        </div>
+        }
+        }
+    </div>
+
+    <h2 class="text-center custom-subtitle">Trabajadores</h2>
+    <div class="staff custom-staff">
+        @for (staff of allStaff; track staff.id) {
+        @if(staff.role === 'worker') {
+        <div class="card custom-card">
+            <div class="card-body">
+                <h4 class="card-title">{{staff.name}} {{staff.surnames}}</h4>
+                <p class="card-email"><b>Email:</b></p>
+                <p class="card-text">{{staff.email}}</p>
+                <a class="custom-btn" [routerLink]="[staff.id]">Ver Detalles</a>
             </div>
         </div>
         }

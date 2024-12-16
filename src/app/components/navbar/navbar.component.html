@@ -1,10 +1,22 @@
 <nav>
     <ul>
-        <li [routerLink]="['/main']">Home</li>
-        <li [routerLink]="['/attractions']">Atracciones</li>
-        <li [routerLink]="['/users']">Personal</li>
-        <li [routerLink]="['/login']">Login</li>
-        <li [routerLink]="['/register']">Registro</li>
-        <li (click)="onClickLogout()">Logout</li>
+        <li>
+            <a [routerLink]="['/main']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li>
+            <a [routerLink]="['/attractions']" routerLinkActive="active">Atracciones</a>
+        </li>
+        <li>
+            <a [routerLink]="['/users']" routerLinkActive="active">Personal</a>
+        </li>
+        <li>
+            <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+        </li>
+        <li>
+            <a [routerLink]="['/register']" routerLinkActive="active">Registro</a>
+        </li>
+        <li (click)="onClickLogout()">
+            <a class="logout-link">Logout</a>
+        </li>
     </ul>
 </nav>
