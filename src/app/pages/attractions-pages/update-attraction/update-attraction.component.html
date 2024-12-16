@@ -21,6 +21,12 @@
             <label class="form-label">Tiempo de espera estimado</label>
             <input type="text" class="form-control mb-4" formControlName="wait_time">
         </div>
+
+        <div>
+            <label for="form-label">Imagen</label>
+            <input type="file" class="form-control mb-4" (change)="onChange($event)">
+        </div>
+
         <div class="functionalSwitch">
             <label class="switch">
                 <input type="checkbox" formControlName="functional">

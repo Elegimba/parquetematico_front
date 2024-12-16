@@ -4,7 +4,7 @@ import { IAttraction } from '../interfaces/iattraction.interface';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 
-type createAttraction = { capacity: number, min_height: string, average_duration: string, wait_time: string, functional: boolean, name: string }
+/* type createAttraction = { capacity: number, min_height: string, average_duration: string, wait_time: string, functional: boolean, name: string } */
 
 @Injectable({
   providedIn: 'root'
@@ -26,13 +26,13 @@ export class AttractionsService {
     )
   }
 
-  create(body: createAttraction) {
+  create(body: FormData) {
     return lastValueFrom(
       this.httpClient.post<IAttraction>(this.baseUrl, body)
     )
   }
 
-  updateById(attractionId: number, body: createAttraction) {
+  updateById(attractionId: number, body: FormData) {
     return lastValueFrom(
       this.httpClient.put<IAttraction>(`${this.baseUrl}/${attractionId}`, body)
     );

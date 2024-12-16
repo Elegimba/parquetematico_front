@@ -17,6 +17,7 @@ export class UpdateAttractionComponent {
   @Input() attractionId: number = 0;
 
   arrErrors: { field: string, message: string }[] = [];
+  files: any;
 
   attractionsService = inject(AttractionsService);
   router = inject(Router);
@@ -52,9 +53,19 @@ export class UpdateAttractionComponent {
     const confirm = await Swal.fire({ title: 'Confirmar', text: '¿Guardar los cambios?', icon: 'question', confirmButtonText: 'Confirmar', showCancelButton: true });
     if(confirm.isConfirmed) {
       try {
-        await this.attractionsService.updateById(this.attractionId, this.formulario.value);
+        let fd = new FormData();
+        Object.entries(this.formulario.value).forEach(([key, value]) => {
+          if(value !== null && value !== undefined) {
+            fd.append(key, value.toString());
+          }
+        });
+        if(this.files?.[0]) {
+          fd.append('image', this.files[0]);
+        }
+        const updated = await this.attractionsService.updateById(this.attractionId, fd);
         Swal.fire('Hecho', 'Los datos de la atracción se han actualizado', 'success');
         this.router.navigateByUrl(`attractions/details/${this.attractionId}`);
+        console.log(updated)
       } catch ({ error }: any) {
         console.log(error);
         this.arrErrors = error;
@@ -62,4 +73,23 @@ export class UpdateAttractionComponent {
     }
   }
 
+  onChange($event: any) {
+    this.files = $event.target.files;
+  }
+
 }
+
+
+/* async onSubmit() {
+  const confirm = await Swal.fire({ title: 'Confirmar', text: '¿Guardar los cambios?', icon: 'question', confirmButtonText: 'Confirmar', showCancelButton: true });
+  if (confirm.isConfirmed) {
+    try {
+      await this.attractionsService.updateById(this.attractionId, this.formulario.value);
+      Swal.fire('Hecho', 'Los datos de la atracción se han actualizado', 'success');
+      this.router.navigateByUrl(`attractions/details/${this.attractionId}`);
+    } catch ({ error }: any) {
+      console.log(error);
+      this.arrErrors = error;
+    }
+  }
+} */

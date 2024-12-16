@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 export class NewAttractionComponent {
 
   arrErrors: { field: string, message: string }[] = [];
+  files: any;
 
   attractionsService = inject(AttractionsService);
 
@@ -33,14 +34,27 @@ export class NewAttractionComponent {
 
     if(confirm.isConfirmed) {
       try {
-        const newAtt = await this.attractionsService.create(this.formulario.value);
+        let fd = new FormData();
+        fd.append('image', this.files[0]);
+        fd.append('name', this.formulario.value.name);
+        fd.append('capacity', this.formulario.value.capacity);
+        fd.append('min_height', this.formulario.value.min_height);
+        fd.append('average_duration', this.formulario.value.average_duration);
+        fd.append('wait_time', this.formulario.value.wait_time);
+        fd.append('functional', this.formulario.value.functional);
+        const newAtt = await this.attractionsService.create(fd);
         Swal.fire('Hecho', 'La nueva atracción se ha añadido al parque', 'success');
         this.router.navigateByUrl(`attractions/details/${newAtt.id}`);
+        console.log(this.files[0])
       } catch ({error}: any) {
         console.log(error);
         this.arrErrors = error;
       }
     }
+  }
+
+  onChange($event: any) {
+    this.files = $event.target.files;
   }
 
 }
