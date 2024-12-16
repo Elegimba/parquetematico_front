@@ -2,14 +2,14 @@ nav {
     width: 80%;
     display: block;
     margin: 0 auto;
-    
+
     ul {
         padding-left: 0;
         display: flex;
         gap: 2px;
         justify-content: center;
-        
-        
+
+
         li {
             border-bottom-left-radius: 10px;
             box-shadow: 2px 2px 2px 2px;
@@ -19,14 +19,14 @@ nav {
             text-align: center;
             background-color: pink;
             cursor: pointer;
-            
+
             &:hover {
                 padding-top: 20px;
                 height: 50px;
                 margin-bottom: -20px;
                 transition: 0.3s;
             }
-            
+
         }
     }
 }
