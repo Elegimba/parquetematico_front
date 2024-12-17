@@ -15,6 +15,7 @@ import { EditScheduleComponent } from './pages/schedules_pages/edit-schedule/edi
 import { roleGuard } from './guards/role.guard';
 import { authGuard } from './guards/auth.guard';
 import { MainComponent } from './pages/main/main.component';
+import { SingleCommentComponent } from './pages/comments/single-comment/single-comment.component';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: '/users' },
@@ -32,5 +33,6 @@ export const routes: Routes = [
     { path: ':userId/schedules', component: ScheduleListComponent, canActivate: [authGuard] },
     { path: 'schedules/create', component: CreateScheduleComponent, canActivate: [roleGuard, authGuard] },
     { path: 'schedules/:scheduleId', component: EditScheduleComponent, canActivate: [authGuard] },
+    { path: ':scheduleId/comments', component: SingleCommentComponent },
     { path: '**', redirectTo: '/users' }
 ];

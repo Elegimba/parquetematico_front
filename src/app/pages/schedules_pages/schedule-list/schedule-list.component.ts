@@ -5,12 +5,13 @@ import { IUser } from '../../../interfaces/iuser.interface';
 import { StaffService } from '../../../services/staff.service';
 import { DatePipe } from '@angular/common';
 import Swal from 'sweetalert2';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-schedule-list',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe, RouterLink],
   templateUrl: './schedule-list.component.html',
   styleUrl: './schedule-list.component.css'
 })
@@ -43,8 +44,8 @@ export class ScheduleListComponent {
   async deleteOnClick(attractionName: string, scheduleId: number) {
     const confirm = await Swal.fire({ title: `¿Quieres eliminar este horario para ${attractionName}?`, icon: 'warning', confirmButtonText: 'Confirmar', showCancelButton: true });
     console.log(scheduleId)
-    if(confirm.isConfirmed) {
-      try {        
+    if (confirm.isConfirmed) {
+      try {
         await this.scheduleService.deleteSchedule(scheduleId);
         Swal.fire('Borrado', '', 'success');
         this.schedules = await this.scheduleService.getSchedulesByUser(this.userId);

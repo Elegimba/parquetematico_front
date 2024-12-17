@@ -25,10 +25,14 @@
                     <p class="card-text">
                         <strong>Fin:</strong> {{schedule.end_time | date: 'HH:mm'}}
                     </p>
+                    <button class="btn btn-outline-primary btn-sm mt-3" [routerLink]="['/', schedule.id, 'comments']">
+                        Ver comentarios
+                    </button>
                     <button class="btn btn-outline-primary btn-sm mt-3" (click)="addComment()">
                         Añadir comentario
                     </button>
-                    <button class="btn btn-outline-danger btn-sm mt-3" (click)="deleteOnClick(schedule.attraction.name, schedule.id!)">Eliminar</button>
+                    <button class="btn btn-outline-danger btn-sm mt-3"
+                        (click)="deleteOnClick(schedule.attraction.name, schedule.id!)">Eliminar</button>
                 </div>
             </div>
         </div>
