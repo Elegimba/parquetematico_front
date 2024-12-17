@@ -1,5 +1,17 @@
 @if(comment) {
-<div class="card">
-    <p>{{comment.comments}}</p>
+<div class="comments-container">
+    <div class="comment-card">
+        <p class="user-name"><strong>{{comment.user.name}}</strong></p>
+        <p class="comment-time"><span class="time">Dia:</span> {{comment.schedule.start_time | date:'dd-MM-YYY' }}</p>
+        <p class="comment-time"><span class="time">Hora entrada: </span> {{comment.schedule.start_time | date:'HH:mm'
+            }}</p>
+        <p class="comment-time"><span class="time">Hora Salida: </span> {{comment.schedule.end_time | date:'HH:mm' }}
+        </p>
+        <p class="comment-text">{{comment.comments}}</p>
+    </div>
+</div>
+}@else {
+<div class="comment-card">
+    <p>No hay comentarios para este día.</p>
 </div>
 }

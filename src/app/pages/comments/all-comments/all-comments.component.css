@@ -1,0 +1,60 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container input[type="date"] {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    padding: 10px 15px;
+    border: 1px solid #36ccb6;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container input[type="date"]:focus {
+    outline: none;
+    border-color: #f7b607;
+    box-shadow: 0px 0px 6px rgba(247, 182, 7, 0.5);
+}
+
+app-comment {
+    display: block;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #36ccb6;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+app-comment:hover {
+    background-color: #fdfdfd;
+    border-color: #f7b607;
+    transition: 0.3s ease;
+}
+
+.comment-card {
+    border: 1px solid #36ccb6;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    align-content: center;
+
+}
+
+.text-comment {
+    margin-top: 1rem;
+    text-align: center;
+}
