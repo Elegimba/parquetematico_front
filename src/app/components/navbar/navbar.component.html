@@ -17,9 +17,9 @@
                 <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
             </li>
         }
-        <!-- <li>
-            <a [routerLink]="['']" routerLinkActive="active">Comentarios</a>
-        </li> -->
+        <li>
+            <a [routerLink]="['/comments']" routerLinkActive="active">Comentarios</a>
+        </li>
         @if(usersService.isLogged()) {
             <li (click)="onClickLogout()">
                 <a class="logout-link">Logout</a>
