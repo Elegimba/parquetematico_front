@@ -37,7 +37,7 @@ export class CommentsService {
     )
   }
 
-  getCommetBySchedule(scheduleId: string) {
+  getCommentBySchedule(scheduleId: string) {
     return lastValueFrom(
       this.httpClient.get<IComment>(`${this.baseUrl}/schedule/${scheduleId}/comment`)
     )

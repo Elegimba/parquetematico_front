@@ -1,4 +1,5 @@
 import { IAttraction } from "./iattraction.interface";
+import { IComment } from "./icomment.interface";
 import { IUser } from "./iuser.interface";
 
 export interface ISchedule {
@@ -7,4 +8,5 @@ export interface ISchedule {
     end_time: Date;
     attraction: IAttraction;
     users: IUser;
+    comment?: IComment;
 }

@@ -6,6 +6,8 @@ import { StaffService } from '../../../services/staff.service';
 import { DatePipe } from '@angular/common';
 import Swal from 'sweetalert2';
 import { RouterLink } from '@angular/router';
+import { CommentsService } from '../../../services/comments.service';
+import { IComment } from '../../../interfaces/icomment.interface';
 
 
 @Component({
@@ -18,26 +20,35 @@ import { RouterLink } from '@angular/router';
 export class ScheduleListComponent {
 
   @Input() userId: string = '';
+  @Input() scheduleId: string = '';
 
   scheduleService = inject(ScheduleService);
   staffService = inject(StaffService)
   schedules: ISchedule[] = [];
   schedule: ISchedule | null = null;
   user: IUser | null = null;
+  scheduleComment: IComment | null = null;
+
+  commentsService = inject(CommentsService);
 
 
   async ngOnInit() {
     try {
       this.schedules = await this.scheduleService.getSchedulesByUser(this.userId);
-      console.log(this.schedules);
       this.user = await this.staffService.getById(this.userId);
+      console.log(this.schedules)
     } catch (error) {
       console.log(error);
     }
   }
+  
 
   addComment() {
 
+
+  }
+
+  editComment() {
 
   }
 

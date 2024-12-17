@@ -27,9 +27,15 @@
                         <button class="btn btn-outline-primary" [routerLink]="['/', schedule.id, 'comments']">
                             Ver comentarios
                         </button>
-                        <button class="btn btn-outline-primary" (click)="addComment()">
-                            Añadir comentario
-                        </button>
+                        @if(!schedule.comment) {
+                            <button class="btn btn-outline-primary" (click)="addComment()">
+                                Añadir comentario
+                            </button>
+                        } @else {
+                            <button class="btn btn-outline-primary" (click)="editComment()">
+                                Editar comentario
+                            </button>
+                        }
                         <button class="btn btn-outline-danger"
                             (click)="deleteOnClick(schedule.attraction.name, schedule.id!)">
                             Eliminar
