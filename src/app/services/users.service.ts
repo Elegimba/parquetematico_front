@@ -42,4 +42,13 @@ export class UsersService {
     const data = jwtDecode<CustomPayload>(token);
     return data.user_role !== 'admin' ? false : true;
   }
+
+  isLogged(): boolean {
+    const token = localStorage.getItem('aptk');
+    if (token) {
+      const data = jwtDecode<CustomPayload>(token);
+      return data.user_role === 'worker' || data.user_role === 'admin' ? true : false;     
+    }
+    return false;
+  }
 }
