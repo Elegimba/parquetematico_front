@@ -1,5 +1,6 @@
 <div class="container">
+    <input type="date" (change)="getCommentsByDate($event)">
     @for(comment of arrComments; track comment.users_id) {
-        <app-comment [comment]="comment"></app-comment>
+    <app-comment [comment]="comment"></app-comment>
     }
 </div>

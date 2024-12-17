@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { IComment } from '../../../interfaces/icomment.interface';
 import { CommentsService } from '../../../services/comments.service';
 import { CommentComponent } from '../../../components/comment/comment.component';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'app-all-comments',
@@ -22,5 +23,15 @@ export class AllCommentsComponent {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async getCommentsByDate($event: any) {
+    console.log($event.target.value);
+    const arrCommentsDate = await this.commentsService.getAll()
+    const arrfiltrado = arrCommentsDate.filter((comment) => {
+      return dayjs(comment.schedule.start_time).format('YYYY-MM-DD') === dayjs($event.target.value).format('YYYY-MM-DD')
+
+    })
+    this.arrComments = arrfiltrado
   }
 }

@@ -1,5 +1,8 @@
 @if(comment) {
 <div class="card">
+    <p><strong>{{comment.user.name}}</strong></p>
+    <p>{{comment.schedule.start_time | date}}</p>
     <p>{{comment.comments}}</p>
+
 </div>
 }
