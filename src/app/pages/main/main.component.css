@@ -6,8 +6,8 @@ h1 {
     font-size: 6em;
     color: #36ccb6;
     text-align: left;
-    margin-top: 60px;
-    text-shadow: 5px 5px 10px #00000036;
+    margin-top: 3.75rem;
+    text-shadow: 0.3125rem 0.3125rem 0.625rem #00000036;
 
 
     span {
@@ -20,8 +20,8 @@ p {
     font-size: 1.3em;
     color: #12312a;
     text-align: left;
-    margin-top: 50px;
-    text-shadow: 5px 5px 10px #00000036;
+    margin-top: 3.125rem;
+    text-shadow: 0.3125rem 0.3125rem 0.625rem #00000036;
 }
 
 .title {
@@ -30,9 +30,9 @@ p {
     justify-content: center;
 
     p {
-        padding-left: 20px;
+        padding-left: 1.25rem;
         width: 40%;
-        margin-top: 20px;
+        margin-top: 1.25rem;
 
     }
 }

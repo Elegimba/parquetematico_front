@@ -1,0 +1,100 @@
+.container {
+    max-width: 75rem;
+    margin: 1.25rem auto;
+    padding: 1.25rem;
+    background-color: #ffffff5e;
+    border-radius: 0.625rem;
+    gap: 1.25rem;
+}
+
+.card {
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.625rem;
+    box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    margin-bottom: 0.9375rem;
+}
+
+.card-header {
+    background-color: #36ccb6;
+    color: #ffffff;
+    font-size: 1.125rem;
+    padding: 0.625rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-body-info {
+    padding: 1.25rem
+}
+
+.card-body {
+
+    padding: 0.9375rem;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.9375rem;
+
+}
+
+.card-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333333;
+
+}
+
+.card-text {
+    font-size: 0.875rem;
+    color: #555555;
+    margin: 0.3125rem 0;
+}
+
+.card-text strong {
+    color: #333333;
+}
+
+.card-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6.25rem, 1fr));
+    gap: 0.625rem;
+    justify-content: space-between;
+}
+
+.btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.3125rem;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.btn-outline-primary {
+    color: #36ccb6;
+    border: 0.0625rem solid #36ccb6;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: #36ccb6;
+    color: #ffffff;
+}
+
+.btn-outline-danger {
+    color: #f7b607;
+    border: 0.0625rem solid #f7b607;
+    background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+    background-color: #f7b607;
+    color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0rem 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
+}

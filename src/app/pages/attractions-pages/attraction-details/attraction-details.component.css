@@ -5,18 +5,18 @@ img {
 }
 
 figure {
-    width: 800px;
-    
+    width: 50rem;
+
 }
 
 span {
 
     .working {
-            color: black;
-            background-color: rgb(62, 202, 62);
-        }
-    
-        .nWorking {
-            background-color: rgb(240, 63, 63);
-        }
+        color: black;
+        background-color: rgb(62, 202, 62);
+    }
+
+    .nWorking {
+        background-color: rgb(240, 63, 63);
+    }
 }
