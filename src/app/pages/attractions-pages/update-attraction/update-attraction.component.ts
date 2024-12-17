@@ -78,18 +78,3 @@ export class UpdateAttractionComponent {
   }
 
 }
-
-
-/* async onSubmit() {
-  const confirm = await Swal.fire({ title: 'Confirmar', text: '¿Guardar los cambios?', icon: 'question', confirmButtonText: 'Confirmar', showCancelButton: true });
-  if (confirm.isConfirmed) {
-    try {
-      await this.attractionsService.updateById(this.attractionId, this.formulario.value);
-      Swal.fire('Hecho', 'Los datos de la atracción se han actualizado', 'success');
-      this.router.navigateByUrl(`attractions/details/${this.attractionId}`);
-    } catch ({ error }: any) {
-      console.log(error);
-      this.arrErrors = error;
-    }
-  }
-} */
