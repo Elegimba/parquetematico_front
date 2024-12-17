@@ -17,21 +17,28 @@ export class AllCommentsComponent {
 
   commentsService = inject(CommentsService);
 
+  today = dayjs(new Date()).format('YYYY-MM-DD')
+
   async ngOnInit() {
     try {
-      this.arrComments = await this.commentsService.getAll()
+      this.getCommentsByDate(this.today)
     } catch (error) {
       console.log(error);
     }
   }
 
-  async getCommentsByDate($event: any) {
-    console.log($event.target.value);
+  async getCommentsByDate(date: any) {
+
     const arrCommentsDate = await this.commentsService.getAll()
     const arrfiltrado = arrCommentsDate.filter((comment) => {
-      return dayjs(comment.schedule.start_time).format('YYYY-MM-DD') === dayjs($event.target.value).format('YYYY-MM-DD')
-
+      return dayjs(comment.schedule.start_time).format('YYYY-MM-DD') === dayjs(date).format('YYYY-MM-DD')
     })
     this.arrComments = arrfiltrado
+  }
+
+  onChange($event: any) {
+    const eventDate = $event.target.value
+    this.getCommentsByDate(eventDate)
+
   }
 }

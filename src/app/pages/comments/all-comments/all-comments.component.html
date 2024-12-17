@@ -1,6 +1,12 @@
 <div class="container">
-    <input type="date" (change)="getCommentsByDate($event)">
+    <input type="date" value={{today}} (change)="onChange($event)">
     @for(comment of arrComments; track comment.users_id) {
     <app-comment [comment]="comment"></app-comment>
+    }
+
+    @if(arrComments.length === 0){
+    <div class="comment-card">
+        <p class="text-comment">No hay comentarios para este día.</p>
+    </div>
     }
 </div>
