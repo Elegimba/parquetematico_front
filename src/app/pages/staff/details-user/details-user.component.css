@@ -1,0 +1,11 @@
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+
+
+    button:first-child {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

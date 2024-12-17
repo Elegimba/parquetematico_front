@@ -1,3 +1,4 @@
+import { IAttraction } from "./iattraction.interface";
 import { ISchedule } from "./ischedule.interface";
 import { IUser } from "./iuser.interface";
 
@@ -7,5 +8,6 @@ export interface IComment {
     schedule_id: number;
     comments: string;
     schedule: ISchedule;
-    user: IUser
+    user: IUser;
+    attaction: IAttraction
 }
