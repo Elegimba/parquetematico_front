@@ -8,12 +8,14 @@ import Swal from 'sweetalert2';
 import { RouterLink } from '@angular/router';
 import { CommentsService } from '../../../services/comments.service';
 import { IComment } from '../../../interfaces/icomment.interface';
+import { UsersService } from '../../../services/users.service';
+import { NewCommentComponent } from "../../../components/new-comment/new-comment.component";
 
 
 @Component({
   selector: 'app-schedule-list',
   standalone: true,
-  imports: [DatePipe, RouterLink],
+  imports: [DatePipe, RouterLink, NewCommentComponent],
   templateUrl: './schedule-list.component.html',
   styleUrl: './schedule-list.component.css'
 })
@@ -23,11 +25,14 @@ export class ScheduleListComponent {
   @Input() scheduleId: string = '';
 
   scheduleService = inject(ScheduleService);
-  staffService = inject(StaffService)
+  staffService = inject(StaffService);
+  usersService = inject(UsersService);
   schedules: ISchedule[] = [];
   schedule: ISchedule | null = null;
   user: IUser | null = null;
-  scheduleComment: IComment | null = null;
+
+  commentBox: boolean = false;
+  dynamicScheduleId: number = 0;
 
   commentsService = inject(CommentsService);
 
@@ -42,11 +47,13 @@ export class ScheduleListComponent {
     }
   }
   
-
-  addComment() {
-
-
+  viewCommentBox(dynamic: any) {
+    this.commentBox = true;
+    this.dynamicScheduleId = dynamic;
+    console.log(dynamic)
   }
+
+  
 
   editComment() {
 

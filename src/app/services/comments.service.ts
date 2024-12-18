@@ -5,7 +5,7 @@ import { IComment } from '../interfaces/icomment.interface';
 import { lastValueFrom } from 'rxjs';
 
 
-type createComment = {}
+type createComment = { comments: string, users_id: number; schedule_id: number }
 
 @Injectable({
   providedIn: 'root'
@@ -43,8 +43,11 @@ export class CommentsService {
     )
   }
 
-  //schedule/1/comment
-  /* create(body: createComment) */
+  createComment(body: createComment) {
+    return lastValueFrom(
+      this.httpClient.post<IComment>(this.baseUrl, body)
+    )
+  }
 
 
 }
