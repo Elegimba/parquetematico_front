@@ -51,4 +51,12 @@ export class UsersService {
     }
     return false;
   }
+
+  /* isWhosLogged(): boolean {
+    const token = localStorage.getItem('aptk');
+    if(token) {
+      const data = jwtDecode<CustomPayload>(token);
+      return data.i
+    }
+  } */
 }

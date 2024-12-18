@@ -37,6 +37,7 @@ export class CreateScheduleComponent {
       console.log(error)
     }
   }
+  
   async onSubmit() {
     try {
       const schedule = await this.scheduleService.createSchedule(this.newSchedule.value)

@@ -84,12 +84,23 @@
 }
 
 .btn-outline-danger {
+    color: #f73707;
+    border: 0.0625rem solid #f73707;
+    background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+    background-color: #f73707;
+    color: #ffffff;
+}
+
+.btn-outline-danger2 {
     color: #f7b607;
     border: 0.0625rem solid #f7b607;
     background-color: transparent;
 }
 
-.btn-outline-danger:hover {
+.btn-outline-danger2:hover {
     background-color: #f7b607;
     color: #ffffff;
 }
@@ -97,4 +108,17 @@
 .card:hover {
     transform: translateY(-0.125rem);
     box-shadow: 0rem 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+.textArea {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.ntextArea {
+    display: none;
 }

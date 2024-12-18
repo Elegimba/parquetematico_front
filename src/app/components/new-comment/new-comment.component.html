@@ -1,0 +1,7 @@
+<form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+    <textarea name="" cols="50" rows="20" formControlName="comments"></textarea>
+    <div>
+        <input type="submit" value="Enviar" class="btn btn-secondary">
+    </div>
+</form>
+<button class="btn btn-secondary">Cancelar</button>

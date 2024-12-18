@@ -24,26 +24,36 @@
                         <strong>Fin:</strong> {{schedule.end_time | date: 'HH:mm'}}
                     </p>
                     <div class="card-buttons">
-                        <button class="btn btn-outline-primary" [routerLink]="['/', schedule.id, 'comments']">
-                            Ver comentarios
-                        </button>
                         @if(!schedule.comment) {
-                            <button class="btn btn-outline-primary" (click)="addComment()">
+                            <button class="btn btn-outline-primary" (click)="viewCommentBox(schedule.id)">
                                 Añadir comentario
                             </button>
                         } @else {
+                            <button class="btn btn-outline-primary" [routerLink]="['/', schedule.id, 'comments']">
+                                Ver comentarios
+                            </button>
                             <button class="btn btn-outline-primary" (click)="editComment()">
                                 Editar comentario
                             </button>
+                            <button class="btn btn-outline-danger2">
+                                Eliminar comentario
+                            </button>
                         }
-                        <button class="btn btn-outline-danger"
+                        @if(usersService.isAdmin()) {
+                            <button class="btn btn-outline-primary" [routerLink]="['/schedules', schedule.id]">Editar horario</button>
+                            <button class="btn btn-outline-danger"
                             (click)="deleteOnClick(schedule.attraction.name, schedule.id!)">
-                            Eliminar
-                        </button>
+                            Eliminar horario
+                            </button>
+                        }
                     </div>
                 </div>
             </div>
         </div>
         }
+        @if(user?.role === 'admin') {
+            <button class="btn btn-info" [routerLink]="['/schedules', 'create']">Añadir horario</button>
+        }
     </div>
+    <app-new-comment [class]="{ textArea: commentBox, ntextArea: !commentBox }" [scheduleId]="dynamicScheduleId" [userId]="userId"></app-new-comment>
 </div>
