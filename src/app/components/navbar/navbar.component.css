@@ -1,21 +1,12 @@
 nav {
     padding: 1rem 0;
     background-color: white;
-
 }
 
-nav ul {
+.navbar-nav {
     display: flex;
     justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0;
-    padding: 0;
-
+    width: 100%;
 }
 
 nav ul li a {
@@ -38,4 +29,37 @@ nav ul li a.active {
     color: #f7b607;
     border-bottom: 2px solid #36ccb6;
     padding-bottom: 0.2rem;
+}
+
+.navbar-toggler {
+    border-color: #36ccb6;
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        justify-content: center;
+        margin: 0;
+    }
+
+    .navbar-nav li {
+        margin: 0 1.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-nav li {
+        margin: 0.5rem 0;
+    }
 }
