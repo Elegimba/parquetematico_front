@@ -52,6 +52,19 @@ export class ScheduleListComponent {
 
   }
 
+  hiddeCommentBox() {
+    this.commentBox = false;
+  }
+
+  async updateComments() {
+    try {
+      this.schedules = await this.scheduleService.getSchedulesByUser(this.userId);
+      this.user = await this.staffService.getById(this.userId);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   editComment() {
 
   }
