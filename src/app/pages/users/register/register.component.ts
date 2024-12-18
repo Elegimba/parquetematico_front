@@ -31,9 +31,9 @@ export class RegisterComponent {
 
   refForm: FormGroup = new FormGroup({
 
-    name: new FormControl('qwerty', [Validators.required]),
-    surnames: new FormControl('jhgf', [Validators.required]),
-    email: new FormControl('qwerty@gmail.com', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/)]),
+    name: new FormControl('', [Validators.required]),
+    surnames: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/)]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     confirmPassword: new FormControl('', [Validators.required, this.passwordValidator]),
 

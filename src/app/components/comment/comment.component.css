@@ -1,20 +1,20 @@
 .comments-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 10px;
+    max-width: 50rem;
+    margin: 1.25rem auto;
+    padding: 0.625rem;
     background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.625rem;
+    box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .comment-card {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    border: 1px solid #36ccb6;
-    border-radius: 8px;
-    padding: 15px;
+    border: 0.0625rem solid #36ccb6;
+    border-radius: 0.5rem;
+    padding: 0.9375rem;
     background-color: #f7f7f7;
 
     .comment-info {
@@ -28,19 +28,19 @@
 }
 
 .user-name {
-    font-size: 16px;
+    font-size: 1rem;
     color: #36ccb6;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
 }
 
 .comment-time {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #826106;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .comment-text {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #333333;
     line-height: 1.6;
 }

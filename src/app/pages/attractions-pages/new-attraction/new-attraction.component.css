@@ -3,7 +3,7 @@
     background-color: #ffffff5e;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    max-width: 37.5rem;
     margin: 3rem auto;
 }
 
@@ -32,7 +32,7 @@ h2.mb-4 {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1.5rem;
-    border: 1px solid #e0e0e0;
+    border: 0.0625rem solid #e0e0e0;
     border-radius: 0.5rem;
     font-size: 1rem;
     color: #333;
@@ -56,8 +56,8 @@ h2.mb-4 {
 .switch {
     position: relative;
     display: inline-block;
-    width: 34px;
-    height: 20px;
+    width: 2.125rem;
+    height: 1.25rem;
 }
 
 .switch input {
@@ -75,11 +75,11 @@ h2.mb-4 {
     bottom: 0;
     background-color: #ccc;
     transition: 0.4s;
-    border-radius: 50px;
+    border-radius: 3.125rem;
 }
 
 .slider.round {
-    border-radius: 34px;
+    border-radius: 2.125rem;
 }
 
 .switch input:checked+.slider {
@@ -89,17 +89,17 @@ h2.mb-4 {
 .slider:before {
     position: absolute;
     content: "";
-    height: 12px;
-    width: 12px;
-    border-radius: 50px;
-    left: 4px;
-    bottom: 4px;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 3.125rem;
+    left: 0.25rem;
+    bottom: 0.25rem;
     background-color: white;
     transition: 0.4s;
 }
 
 .switch input:checked+.slider:before {
-    transform: translateX(14px);
+    transform: translateX(0.875rem);
 }
 
 input[type="submit"],
@@ -125,7 +125,7 @@ input[type="submit"]:hover {
 button.btn-secondary {
     background-color: #e6a806;
     color: white;
-    border: 1px solid #e6a806;
+    border: 0.0625rem solid #e6a806;
     transition: 0.3s;
 }
 
@@ -137,7 +137,7 @@ button.btn-secondary:hover {
 .errores {
     margin-top: 2rem;
     background-color: #fff3f3;
-    border: 1px solid #ffcccc;
+    border: 0.0625rem solid #ffcccc;
     padding: 1rem;
     border-radius: 0.5rem;
     color: #d9534f;
