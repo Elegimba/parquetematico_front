@@ -1,37 +1,140 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
-    gap: 0.625rem;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.background {
+    margin-top: 2rem;
+    background-color: #ffffff5e;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.attraction-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    height: 20rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attraction-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.attraction-card .img-container {
+    height: 10rem;
+    overflow: hidden;
+}
+
+.attraction-card .img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.attraction-card h2 {
+    font-size: 1.2rem;
+    color: #36ccb6;
+    margin: 1rem;
+    text-align: center;
+}
+
+.attraction-card p {
+    font-size: 1rem;
+    margin: 0.5rem 0 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.working {
+    color: #36ccb6;
+}
+
+.nWorking {
+    color: #f7b607;
+}
+
+.attraction-card .functionalButtons {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.attraction-card .functionalButtons button {
+    width: 30%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.attraction-card .functionalButtons button:hover {
+    transform: scale(1.05);
+}
+
+.attraction-card .functionalButtons .btn-info {
+    background-color: #36ccb6;
+    color: white;
+}
+
+.attraction-card .functionalButtons .btn-danger {
+    background-color: #f7b607;
+    color: white;
+}
+
+.attraction-card .functionalButtons .btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.nuevatt {
+    display: flex;
     justify-content: center;
-    margin: 3.125rem auto;
+    align-content: center;
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
 
-    .nuevatt {
-        width: 15.625rem;
-        padding: 0.3125rem;
-        border: 0.0625rem solid lightgrey;
-        border-radius: 0.3125rem;
-        height: auto;
-        background-color: whitesmoke;
+.nuevatt button {
+    background-color: #36ccb6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        button {
-            width: 100%;
-            height: 12.5rem;
-            border: 0.0625rem solid black;
-            border-radius: 0.9375rem;
-            background-color: rgba(65, 149, 182, 0.644);
+.nuevatt button:hover {
+    background-color: #2cb5a3;
+    /* Cambio de color en hover */
+    transform: scale(1.05);
+}
 
-            &:hover {
-                background-color: rgb(65, 149, 182);
-                border: 0.3125rem solid black;
-            }
-        }
-
-        h3 {
-            margin: 1.25rem 0.3125rem;
-        }
-
-        &:hover {
-            transform: scale(105%);
-        }
-    }
+/* Título para la nueva atracción */
+.nuevatt h3 {
+    font-size: 1.5rem;
+    color: #36ccb6;
+    margin-top: 1.5rem;
 }

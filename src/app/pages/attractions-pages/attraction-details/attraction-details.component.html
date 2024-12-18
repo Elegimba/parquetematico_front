@@ -1,20 +1,28 @@
 @if(attraction) {
-    <div class="attraction">
+<div class="attraction">
+    <div class="background">
         <h3>{{attraction.name}}</h3>
         <figure>
             <img [src]="imageUrl + '/' + attraction.image" alt="">
         </figure>
-        <p>Capacidad de la atracción: {{attraction.capacity}} plazas.</p>
-        <p>Altura mínima permitida: {{attraction.min_height}}cm.</p>
-        <p>Duración media de la atracción: {{attraction.average_duration}}min.</p>
-        <p>Tiempo de espera aproximado: {{attraction.wait_time}}min.</p>
-        <p>Disponibilidad de la atracción: <span [class]="{ working: attraction.functional, nWorking: !attraction.functional }">{{ attraction.functional ? 'Working ✔' : 'Disabled ❌' }}</span></p>
-        <div class="functionalButtons">
-            <button class="btn btn-info" [routerLink]="['/attractions/edit', attractionId]">Editar</button>
-            @if(usersService.isAdmin()) {
-                <button class="btn btn-danger" (click)="onClick()">Eliminar</button>
-            }
-            <button class="btn btn-secondary" [routerLink]="['/attractions']">Volver</button>
+        <p>Capacidad de la atracción: <span class="tags">{{attraction.capacity}} plazas.</span></p>
+        <p>Altura mínima permitida: <span class="tags">{{attraction.min_height}}cm</span>.</p>
+        <p>Duración media de la atracción: <span class="tags">{{attraction.average_duration}}min.</span></p>
+        <p>Tiempo de espera aproximado: <span class="tags">{{attraction.wait_time}}min.</span></p>
+        <p>Disponibilidad de la atracción: <span
+                [class]="{ working: attraction.functional, nWorking: !attraction.functional }">{{ attraction.functional
+                ? 'Working ✔' : 'Disabled ❌' }}</span></p>
+        <div id="button">
+            <div class="back-button">
+                <button class="btn btn-secondary" [routerLink]="['/attractions']">Volver</button>
+                <button class="btn btn-info" [routerLink]="['/attractions/edit', attractionId]">Editar</button>
+            </div>
+            <div class="delete-button">
+                @if(usersService.isAdmin()) {
+                <button class="btn btn-danger delete" (click)="onClick()">Eliminar</button>
+                }
+            </div>
         </div>
     </div>
+</div>
 }

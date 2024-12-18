@@ -1,6 +1,6 @@
-<div>
-    <h2 class="mb-4">Actualizar Atracción</h2>
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="background">
+        <h2 class="mb-4">Actualizar Atracción</h2>
         <div>
             <label class="form-label">Nombre</label>
             <input type="text" class="form-control mb-4" formControlName="name">
@@ -33,15 +33,16 @@
                 <span class="slider round"></span>
             </label>
 
-            <div>
+            <div class="submit">
                 <input type="submit" value="Actualizar" class="btn btn-success">
-                <button class="btn btn-secondary" [routerLink]="['/attractions/details', attractionId]">Cancelar</button>
+                <button class="btn btn-secondary"
+                    [routerLink]="['/attractions/details', attractionId]">Cancelar</button>
             </div>
         </div>
 
 
-    </form>
-</div>
+    </div>
+</form>
 
 <div class="errores">
     @for(err of arrErrors; track $index) {

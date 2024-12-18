@@ -1,11 +1,13 @@
-<div class="container">
+<div class="background">
     @if(usersService.isAdmin()) {
-        <div class="nuevatt">
-            <button [routerLink]="['create']">ADD</button>
-            <h3>Nueva atracción</h3>
-        </div>
+    <div class="nuevatt">
+        <button [routerLink]="['create']">Nueva Atracción</button>
+
+    </div>
     }
-    @for(att of arrAttractions; track att.id) {
-        <app-attraction [attraction]="att"></app-attraction>
-    }
+    <div class="container">
+        @for(att of arrAttractions; track att.id) {
+        <app-attraction class="attraction-card" [attraction]="att"></app-attraction>
+        }
+    </div>
 </div>

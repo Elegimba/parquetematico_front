@@ -1,50 +1,46 @@
-<div>
-    <h2 class="mb-4">Nueva Atracción</h2>
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div>
+<div class="new-att">
+    <div class="background">
+        <h2 class="mb-4">Nueva Atracción</h2>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
             <label class="form-label">Nombre</label>
             <input type="text" class="form-control mb-4" formControlName="name">
-        </div>
-        <div>
+
+
             <label class="form-label">Capacidad máxima</label>
             <input type="text" class="form-control mb-4" formControlName="capacity">
-        </div>
-        <div>
+
             <label class="form-label">Estatura mínima permitida</label>
             <input type="text" class="form-control mb-4" formControlName="min_height">
-        </div>
-        <div>
+
             <label class="form-label">Duración estimada</label>
             <input type="text" class="form-control mb-4" formControlName="average_duration">
-        </div>
-        <div>
+
             <label class="form-label">Tiempo de espera estimado</label>
             <input type="text" class="form-control mb-4" formControlName="wait_time">
-        </div>
 
-        <div>
-            <label for="form-label">Imagen</label>
+            <label class="form-label">Imagen</label>
             <input type="file" class="form-control mb-4" (change)="onChange($event)">
-        </div>
 
-        <div class="functionalSwitch">
-            <label class="switch">
-                <input type="checkbox" formControlName="functional">
-                <span class="slider round"></span>
-            </label>
-            
-            <div>
-                <input type="submit" value="Crear" class="btn btn-success">
-                <button class="btn btn-secondary" [routerLink]="['/attractions']">Cancelar</button>
+
+            <div class="functionalSwitch">
+                <label class="switch">
+                    <input type="checkbox" formControlName="functional">
+                    <span class="slider round"></span>
+                </label>
+
+                <div class="submit">
+                    <input type="submit" value="Crear" class="btn btn-success">
+                    <button class="btn btn-secondary" [routerLink]="['/attractions']">Cancelar</button>
+                </div>
             </div>
-        </div>
 
+            @for(err of arrErrors; track $index) {
+            <div class="errores">
+                <p>{{err.message}}</p>
+            </div>
+            }
 
-    </form>
-</div>
-
-<div class="errores">
-    @for(err of arrErrors; track $index) {
-        <p>{{err.message}}</p>
-    }
+        </form>
+    </div>
 </div>
