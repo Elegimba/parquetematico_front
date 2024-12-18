@@ -3,7 +3,12 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { UsersService } from '../../../services/users.service';
 import { Router, RouterLink } from '@angular/router';
+import { jwtDecode, JwtPayload } from 'jwt-decode';
 
+interface CustomPayload extends JwtPayload {
+  user_id: string
+  user_role: string;
+}
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -11,6 +16,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
+
 export class LoginComponent {
 
   usersServices = inject(UsersService)
@@ -26,6 +32,8 @@ export class LoginComponent {
 
   })
 
+
+
   async onSubmit() {
     try {
       const response = await this.usersServices.login(this.logForm.value)
@@ -37,7 +45,11 @@ export class LoginComponent {
         }
       )
       localStorage.setItem('aptk', response.token)
-      this.router.navigateByUrl('/users')
+      const token = localStorage.getItem('aptk')!;
+      const id = await jwtDecode<CustomPayload>(token);
+      console.log(id.user_id)
+      this.router.navigateByUrl(`${id.user_id}/schedules`)
+
 
     } catch ({ error }: any) {
       this.errorLogin = error.message

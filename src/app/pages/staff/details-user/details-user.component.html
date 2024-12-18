@@ -10,20 +10,30 @@
                 <p class="card-text mb-3"><strong>Email:</strong> {{ user.email }}</p>
             </div>
             <div id="buttons" class="card-footer d-flex justify-content-around mt-3 bg-white border-top-0">
+                @if(user.role === 'worker'){
                 <div class="schedule-button">
                     <button class="btn btn-primary" [routerLink]="['/', user.id, 'schedules']">Horarios</button>
                 </div>
-                <div class="edit-buttons">
-                    <div class="back-buttons">
-                        <button class="btn btn-outline-secondary" [routerLink]="['/users']">Atrás</button>
-                        <button class="btn btn-primary" [routerLink]="['/users', 'edit', user.id]">Modificar</button>
-                    </div>
-                    @if(userServices.isAdmin()){
-                    <div class="delete-button"><button class="btn btn-outline-danger"
-                            (click)="deleteUser(userId)">Eliminar</button>
-                    </div>
-                    }
+                }
+
+                @if(user.role === 'admin' && userServices.isAdmin()){
+
+                <div class="schedule-button">
+                    <button class="btn btn-primary" [routerLink]="['/', 'schedules', 'create']">Añadir horarios</button>
                 </div>
+                }
+
+                @if(userServices.isWhosLogged(user.id) || userServices.isAdmin()){
+                <button class="btn btn-primary" [routerLink]="['/users', 'edit', user.id]">Modificar</button>
+                }
+                @if(userServices.isAdmin()){
+                <div class="edit-buttons">
+
+                    <div class="delete-button"><button class="btn btn-outline-danger"
+                            (click)="deleteUser(userId)">Eliminar usuario</button>
+                    </div>
+                </div>
+                }
             </div>
         </div>
     </div>
