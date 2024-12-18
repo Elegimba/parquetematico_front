@@ -41,19 +41,16 @@ export class ScheduleListComponent {
     try {
       this.schedules = await this.scheduleService.getSchedulesByUser(this.userId);
       this.user = await this.staffService.getById(this.userId);
-      console.log(this.schedules)
     } catch (error) {
       console.log(error);
     }
   }
-  
+
   viewCommentBox(dynamic: any) {
     this.commentBox = true;
     this.dynamicScheduleId = dynamic;
-    console.log(dynamic)
-  }
 
-  
+  }
 
   editComment() {
 
@@ -61,7 +58,7 @@ export class ScheduleListComponent {
 
   async deleteOnClick(attractionName: string, scheduleId: number) {
     const confirm = await Swal.fire({ title: `¿Quieres eliminar este horario para ${attractionName}?`, icon: 'warning', confirmButtonText: 'Confirmar', showCancelButton: true });
-    console.log(scheduleId)
+
     if (confirm.isConfirmed) {
       try {
         await this.scheduleService.deleteSchedule(scheduleId);
@@ -72,4 +69,6 @@ export class ScheduleListComponent {
       }
     }
   }
+
+
 }

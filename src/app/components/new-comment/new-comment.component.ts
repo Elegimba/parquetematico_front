@@ -19,22 +19,20 @@ export class NewCommentComponent {
   commentsService = inject(CommentsService);
   activatedRoute = inject(ActivatedRoute);
 
-  commentForm : FormGroup = new FormGroup({
+  commentForm: FormGroup = new FormGroup({
     comments: new FormControl(),
   })
 
   ngOnInit() {
     this.commentForm.patchValue({ users_Id: this.userId, schedule_Id: this.scheduleId })
-    console.log(this.userId, this.scheduleId)
   }
 
   async onSubmit() {
     try {
       this.commentForm.value.schedule_id = this.scheduleId
       this.commentForm.value.users_id = this.userId
-      console.log(this.commentForm.value)
       const comment = await this.commentsService.createComment(this.commentForm.value);
-    } catch ({error}: any) {
+    } catch ({ error }: any) {
       console.log(error);
       this.arrErrors = error;
     }

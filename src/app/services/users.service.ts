@@ -14,6 +14,7 @@ type loginResponse = {
   token: string
 }
 interface CustomPayload extends JwtPayload {
+  user_id: string
   user_role: string;
 }
 
@@ -47,16 +48,18 @@ export class UsersService {
     const token = localStorage.getItem('aptk');
     if (token) {
       const data = jwtDecode<CustomPayload>(token);
-      return data.user_role === 'worker' || data.user_role === 'admin' ? true : false;     
+      return data.user_role === 'worker' || data.user_role === 'admin' ? true : false;
     }
     return false;
   }
 
-  /* isWhosLogged(): boolean {
+
+  isWhosLogged(userId: any): boolean {
     const token = localStorage.getItem('aptk');
-    if(token) {
+    if (token) {
       const data = jwtDecode<CustomPayload>(token);
-      return data.i
+      return data.user_id === userId ? true : false
     }
-  } */
+    return false
+  }
 }
