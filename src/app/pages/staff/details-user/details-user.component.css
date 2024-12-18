@@ -53,6 +53,7 @@
 
 .btn-primary {
     background-color: #36ccb6;
+    margin-bottom: 10px;
     border: none;
     color: white;
 }
@@ -93,7 +94,7 @@
 
     .schedule-button {
         width: 100%;
-        margin-bottom: 0.625rem;
+
 
         button:first-child {
             width: 100%;

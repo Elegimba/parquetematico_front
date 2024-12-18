@@ -4,7 +4,7 @@
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     gap: 1.5rem;
     padding: 2rem;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
@@ -112,13 +112,12 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 100%;
-    margin-top: 2rem;
+    width: 40%;
+    margin: 2rem auto;
     background-color: #ffffff;
     border-radius: 0.5rem;
     padding: 1.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
     text-align: center;
 }
 

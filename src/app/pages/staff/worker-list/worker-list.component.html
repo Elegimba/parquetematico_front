@@ -1,40 +1,47 @@
 <div class="custom-container">
     <div class="background-custom">
-        <h1 class="text-center custom-title">Equipo ID Boot <span>Park</span></h1>
+        <h1 class="custom-title">Equipo ID Boot <span>Park</span></h1>
     </div>
-    <div class="background">
-        <h2 class="text-center custom-subtitle">Administradores</h2>
-        <div class="staff custom-staff">
-            @for (staff of allStaff; track staff.id) {
-            @if(staff.role === 'admin') {
-            <div class="card custom-card">
-                <div class="card-body">
-                    <h4 class="card-title">{{staff.name}} {{staff.surnames}}</h4>
-                    <p class="card-email"><b>Email:</b></p>
-                    <p class="card-text">{{staff.email}}</p>
-                    <a class="custom-btn" [routerLink]="[staff.id]">Ver Detalles</a>
+    <div class="row gx-5">
+        <div class="col-12 col-lg-4">
+            <div class="section-container">
+                <h2 class="custom-subtitle">Admin</h2>
+                <div class="custom-staff">
+                    @for (staff of allStaff; track staff.id) {
+                    @if (staff.role === 'admin') {
+                    <div class="custom-card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">{{staff.name}} {{staff.surnames}}</h4>
+                            <p class="card-email"><b>Email:</b></p>
+                            <p class="card-text">{{staff.email}}</p>
+                            <a class="custom-btn" [routerLink]="[staff.id]">Ver Detalles</a>
+                        </div>
+                    </div>
+                    }
+                    }
                 </div>
             </div>
-            }
-            }
         </div>
-    </div>
-
-    <div class="background">
-        <h2 class="text-center custom-subtitle">Trabajadores</h2>
-        <div class="staff custom-staff">
-            @for (staff of allStaff; track staff.id) {
-            @if(staff.role === 'worker') {
-            <div class="card custom-card">
-                <div class="card-body">
-                    <h4 class="card-title">{{staff.name}} {{staff.surnames}}</h4>
-                    <p class="card-email"><b>Email:</b></p>
-                    <p class="card-text">{{staff.email}}</p>
-                    <a class="custom-btn" [routerLink]="[staff.id]">Ver Detalles</a>
+        <div class="col-12 col-lg-8">
+            <div class="section-container">
+                <h2 class="custom-subtitle">Trabajadores</h2>
+                <div class="row g-4">
+                    @for (staff of allStaff; track staff.id) {
+                    @if (staff.role === 'worker') {
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="custom-card">
+                            <div class="card-body">
+                                <h4 class="card-title">{{staff.name}} {{staff.surnames}}</h4>
+                                <p class="card-email"><b>Email:</b></p>
+                                <p class="card-text">{{staff.email}}</p>
+                                <a class="custom-btn" [routerLink]="[staff.id]">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    }
                 </div>
             </div>
-            }
-            }
         </div>
     </div>
 </div>

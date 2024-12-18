@@ -1,0 +1,80 @@
+form {
+    background-color: #ffffff5e;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.background {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #36ccb6;
+    margin: 1rem;
+    text-align: center;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-control,
+select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+select:focus {
+    border-color: #36ccb6;
+    box-shadow: 0 0 5px rgba(54, 204, 182, 0.6);
+}
+
+select {
+    cursor: pointer;
+    background-color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #36ccb6;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    width: 100%;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #28b298;
+    transform: translateY(-3px);
+}
+
+input[type="submit"]:active {
+    background-color: #22a28a;
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
