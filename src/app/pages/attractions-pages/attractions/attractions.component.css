@@ -1,5 +1,6 @@
 .container {
     display: grid;
+    margin: 0 auto;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     gap: 1.5rem;
     padding: 2rem;
@@ -13,6 +14,12 @@
     background-color: #ffffff5e;
     padding: 1rem;
     border-radius: 0.5rem;
+}
+
+.card {
+    width: 21.875rem;
+    display: flex;
+    justify-content: center;
 }
 
 .attraction-card {
@@ -128,11 +135,10 @@
 
 .nuevatt button:hover {
     background-color: #2cb5a3;
-    /* Cambio de color en hover */
     transform: scale(1.05);
 }
 
-/* Título para la nueva atracción */
+
 .nuevatt h3 {
     font-size: 1.5rem;
     color: #36ccb6;

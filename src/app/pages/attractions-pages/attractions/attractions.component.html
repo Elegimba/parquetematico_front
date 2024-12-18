@@ -7,7 +7,9 @@
     }
     <div class="container">
         @for(att of arrAttractions; track att.id) {
-        <app-attraction class="attraction-card" [attraction]="att"></app-attraction>
+        <div class="card">
+            <app-attraction class="attraction-card" [attraction]="att"></app-attraction>
+        </div>
         }
     </div>
 </div>
