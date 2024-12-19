@@ -46,10 +46,9 @@ p {
         max-width: 100%;
     }
 
-    .title.background p {
-
+    .title .background {
         font-size: 1.1em;
-        margin-left: -10% !important;
+        margin-left: 0;
         width: 80%;
         padding-left: 0;
     }
