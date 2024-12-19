@@ -55,4 +55,10 @@ export class CommentsService {
     )
   }
 
+  deleteComment(commentId: number) {
+    return lastValueFrom(
+      this.httpClient.delete<IComment>(`${this.baseUrl}/${commentId}`)
+    )
+  }
+
 }

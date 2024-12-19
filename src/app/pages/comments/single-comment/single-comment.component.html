@@ -4,8 +4,12 @@
         <p>{{commentBySchedule.comments}}</p>
         }
         <div>
-            <button (click)="viewCommentBox()">Editar</button>
-            <button></button>
+            @if(usersService.isWhosLogged(commentBySchedule?.users_id)){
+                <button (click)="viewCommentBox()">Editar</button>
+            }
+            @if(usersService.isAdmin()) {
+                <button (click)="deleteOnClick(commentBySchedule!.id)">Borrar</button>
+            }
         </div>
     </div>
     
