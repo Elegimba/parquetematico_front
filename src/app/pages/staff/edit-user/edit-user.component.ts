@@ -2,6 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StaffService } from '../../../services/staff.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-user',
@@ -59,6 +60,7 @@ export class EditUserComponent {
     try {
       if (this.formEdit.valid) {
         await this.staffServices.updateById(this.userId, this.formEdit.value)
+        Swal.fire('Hecho', 'Detalles modificados', 'success');
       }
       this.router.navigateByUrl('/users')
     } catch (error) {

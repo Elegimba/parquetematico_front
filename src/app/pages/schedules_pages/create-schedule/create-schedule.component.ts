@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ScheduleService } from '../../../services/schedule.service';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IAttraction } from '../../../interfaces/iattraction.interface';
 import { IUser } from '../../../interfaces/iuser.interface';
 import { AttractionsService } from '../../../services/attractions.service';
 import { StaffService } from '../../../services/staff.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-schedule',
@@ -23,10 +24,10 @@ export class CreateScheduleComponent {
   arrWorkers: IUser[] = []
 
   newSchedule: FormGroup = new FormGroup({
-    start_time: new FormControl(),
-    end_time: new FormControl(),
-    attractions_id: new FormControl(),
-    users_id: new FormControl()
+    start_time: new FormControl(Validators.required),
+    end_time: new FormControl(Validators.required),
+    attractions_id: new FormControl(Validators.required),
+    users_id: new FormControl(Validators.required)
   })
 
   async ngOnInit() {
@@ -37,10 +38,11 @@ export class CreateScheduleComponent {
       console.log(error)
     }
   }
-  
+
   async onSubmit() {
     try {
       const schedule = await this.scheduleService.createSchedule(this.newSchedule.value)
+      Swal.fire('Hecho', 'La nueva atracción se ha añadido al parque', 'success');
     } catch (error) {
       console.log(error)
     }

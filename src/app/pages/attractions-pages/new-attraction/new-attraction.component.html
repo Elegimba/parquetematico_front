@@ -9,15 +9,27 @@
 
             <label class="form-label">Capacidad máxima</label>
             <input type="text" class="form-control mb-4" formControlName="capacity">
+            @if(formulario.get('capacity')?.errors?.['pattern']) {
+            <p class="text-danger"><small>El campo debe ser un numero.</small></p>
+            }
 
             <label class="form-label">Estatura mínima permitida</label>
             <input type="text" class="form-control mb-4" formControlName="min_height">
+            @if(formulario.get('min_height')?.errors?.['pattern']) {
+            <p class="text-danger"><small>El campo debe ser un numero.</small></p>
+            }
 
             <label class="form-label">Duración estimada</label>
             <input type="text" class="form-control mb-4" formControlName="average_duration">
+            @if(formulario.get('average_duration')?.errors?.['pattern']) {
+            <p class="text-danger"><small>El campo debe ser un numero.</small></p>
+            }
 
             <label class="form-label">Tiempo de espera estimado</label>
             <input type="text" class="form-control mb-4" formControlName="wait_time">
+            @if(formulario.get('wait_time')?.errors?.['pattern']) {
+            <p class="text-danger"><small>El campo debe ser un numero.</small></p>
+            }
 
             <label class="form-label">Imagen</label>
             <input type="file" class="form-control mb-4" (change)="onChange($event)">
