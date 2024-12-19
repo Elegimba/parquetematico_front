@@ -36,7 +36,8 @@ export class NewCommentComponent {
       this.commentForm.value.schedule_id = this.scheduleId
       this.commentForm.value.users_id = this.userId
       await this.commentsService.createComment(this.commentForm.value);
-      this.addedComment.emit();      
+      this.addedComment.emit();
+      this.hideComponent();
     } catch ({ error }: any) {
       console.log(error);
       this.arrErrors = error;
