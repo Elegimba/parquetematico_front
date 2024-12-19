@@ -1,7 +1,6 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { CommentsService } from '../../services/comments.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-comment',
@@ -16,12 +15,10 @@ export class NewCommentComponent {
   @Output() addedComment = new EventEmitter<void>();
 
   @Input() userId: string = '';
-  @Input() scheduleId: number = 0;
+  @Input() scheduleId: string = '';
   arrErrors: { field: string, message: string }[] = [];
 
   commentsService = inject(CommentsService);
-  router = inject(Router);
-  activatedRoute = inject(ActivatedRoute);
 
   commentForm: FormGroup = new FormGroup({
     comments: new FormControl(),
@@ -33,8 +30,8 @@ export class NewCommentComponent {
 
   async onSubmit() {
     try {
-      this.commentForm.value.schedule_id = this.scheduleId
-      this.commentForm.value.users_id = this.userId
+      this.commentForm.value.schedule_id = this.scheduleId;
+      this.commentForm.value.users_id = this.userId;
       await this.commentsService.createComment(this.commentForm.value);
       this.addedComment.emit();
       this.hideComponent();
@@ -45,7 +42,7 @@ export class NewCommentComponent {
   }
 
   hideComponent() {
-    this.close.emit()
+    this.close.emit();
     this.commentForm.reset();
   }
 

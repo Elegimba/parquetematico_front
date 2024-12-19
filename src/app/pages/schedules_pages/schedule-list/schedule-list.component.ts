@@ -7,9 +7,9 @@ import { DatePipe } from '@angular/common';
 import Swal from 'sweetalert2';
 import { RouterLink } from '@angular/router';
 import { CommentsService } from '../../../services/comments.service';
-import { IComment } from '../../../interfaces/icomment.interface';
 import { UsersService } from '../../../services/users.service';
 import { NewCommentComponent } from "../../../components/new-comment/new-comment.component";
+import { UpdateCommentComponent } from "../../../components/update-comment/update-comment.component";
 
 
 @Component({
@@ -32,7 +32,8 @@ export class ScheduleListComponent {
   user: IUser | null = null;
 
   commentBox: boolean = false;
-  dynamicScheduleId: number = 0;
+  dynamicScheduleId: string = '';
+  dynamicCommentId: number = 0;
 
   commentsService = inject(CommentsService);
 
@@ -49,7 +50,7 @@ export class ScheduleListComponent {
   viewCommentBox(dynamic: any) {
     this.commentBox = true;
     this.dynamicScheduleId = dynamic;
-
+  
   }
 
   hiddeCommentBox() {
@@ -63,10 +64,6 @@ export class ScheduleListComponent {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  editComment() {
-
   }
 
   async deleteOnClick(attractionName: string, scheduleId: number) {

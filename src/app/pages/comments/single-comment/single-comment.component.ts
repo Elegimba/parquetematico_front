@@ -1,11 +1,12 @@
 import { Component, inject, Input } from '@angular/core';
 import { CommentsService } from '../../../services/comments.service';
 import { IComment } from '../../../interfaces/icomment.interface';
+import { UpdateCommentComponent } from "../../../components/update-comment/update-comment.component";
 
 @Component({
   selector: 'app-single-comment',
   standalone: true,
-  imports: [],
+  imports: [UpdateCommentComponent],
   templateUrl: './single-comment.component.html',
   styleUrl: './single-comment.component.css'
 })
@@ -16,6 +17,7 @@ export class SingleCommentComponent {
   commentService = inject(CommentsService)
 
   commentBySchedule: IComment | null = null
+  commentBox: boolean = false;
 
   async ngOnInit() {
     try {
@@ -26,4 +28,20 @@ export class SingleCommentComponent {
     }
 
   }
+
+  async updateComments() {
+    try {
+      this.commentBySchedule = await this.commentService.getCommentBySchedule(this.scheduleId)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  viewCommentBox() {
+    this.commentBox = true;
+  }
+  hiddeCommentBox() {
+    this.commentBox = false;
+  }
+
 }

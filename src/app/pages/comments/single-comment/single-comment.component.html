@@ -3,5 +3,12 @@
         @if(commentBySchedule){
         <p>{{commentBySchedule.comments}}</p>
         }
+        <div>
+            <button (click)="viewCommentBox()">Editar</button>
+            <button></button>
+        </div>
     </div>
+    
+    
+    <app-update-comment  [class]="{ textArea: commentBox, ntextArea: !commentBox }"  (close)="hiddeCommentBox()" [scheduleId]="scheduleId" (editedComment)="updateComments()"></app-update-comment>
 </div>

@@ -49,5 +49,10 @@ export class CommentsService {
     )
   }
 
+  updateComment(commentId: number, body: { comments: string }) {
+    return lastValueFrom(
+      this.httpClient.put<IComment>(`${this.baseUrl}/${commentId}`, body)
+    )
+  }
 
 }

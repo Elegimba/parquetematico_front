@@ -21,6 +21,19 @@
     margin: 0;
 }
 
+.textArea {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.ntextArea {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .container {
         max-width: 90%;
@@ -30,4 +43,5 @@
     .container p {
         font-size: 1.1rem;
     }
+
 }
