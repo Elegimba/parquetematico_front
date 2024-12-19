@@ -19,7 +19,8 @@
                 @if(user.role === 'admin' && userServices.isAdmin()){
 
                 <div class="schedule-button">
-                    <button class="btn btn-primary" [routerLink]="['/', 'schedules', 'create']">Añadir horarios</button>
+                    <button class="btn btn-primary add" [routerLink]="['/', 'schedules', 'create']">Añadir
+                        horarios</button>
                 </div>
                 }
 

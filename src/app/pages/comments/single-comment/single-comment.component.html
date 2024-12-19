@@ -1,18 +1,21 @@
 <div class="container">
     <div class="background">
         @if(commentBySchedule){
-        <p>{{commentBySchedule.comments}}</p>
+        <div class="text">
+            <p>{{commentBySchedule.comments}}</p>
+        </div>
         }
-        <div>
+        <div class="buttons">
             @if(usersService.isWhosLogged(commentBySchedule?.users_id)){
-                <button (click)="viewCommentBox()">Editar</button>
+            <button (click)="viewCommentBox()">Editar</button>
             }
             @if(usersService.isAdmin()) {
-                <button (click)="deleteOnClick(commentBySchedule!.id)">Borrar</button>
+            <button class="deletebutton" (click)="deleteOnClick(commentBySchedule!.id)">Borrar</button>
             }
         </div>
     </div>
-    
-    
-    <app-update-comment  [class]="{ textArea: commentBox, ntextArea: !commentBox }"  (close)="hiddeCommentBox()" [scheduleId]="scheduleId" (editedComment)="updateComments()"></app-update-comment>
+
+
+    <app-update-comment [class]="{ textArea: commentBox, ntextArea: !commentBox }" (close)="hiddeCommentBox()"
+        [scheduleId]="scheduleId" (editedComment)="updateComments()"></app-update-comment>
 </div>

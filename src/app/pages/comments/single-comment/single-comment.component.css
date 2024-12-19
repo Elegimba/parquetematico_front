@@ -21,6 +21,47 @@
     margin: 0;
 }
 
+.text {
+
+    padding: 20px;
+}
+
+div.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    border: none;
+    background-color: #36ccb6;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-0.125rem);
+}
+
+button:focus {
+    outline: none;
+}
+
+.deletebutton {
+    background-color: #f73707;
+    color: white;
+    border: none;
+}
+
+.deletebutton:hover {
+    background-color: #d32f2f;
+}
+
 .textArea {
     position: fixed;
     z-index: 10;

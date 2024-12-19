@@ -1,9 +1,15 @@
-<div class="form-container">
-    <form [formGroup]="editCommentForm" (ngSubmit)="onSubmit()">
-        <textarea name="" cols="50" rows="20" formControlName="comments"></textarea>
-        <div>
-            <input type="submit" value="Enviar" class="btn btn-secondary">
-            <button type="button" class="btn btn-secondary" (click)="hideComponent()">Cancelar</button>
-        </div>
-    </form>
+<div class="background">
+    <div class="form-container">
+        <form [formGroup]="editCommentForm" (ngSubmit)="onSubmit()">
+            <div class="text">
+                <textarea name="" cols="50" rows="20" formControlName="comments"
+                    placeholder="Escribe aquí tu comentario"></textarea>
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Enviar" class="btn btn-secondary">
+                <button type="button" class="btn btn-secondary" (click)="hideComponent()">Cancelar</button>
+            </div>
+        </form>
+
+    </div>
 </div>
