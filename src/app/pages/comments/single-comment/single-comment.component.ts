@@ -19,8 +19,8 @@ export class SingleCommentComponent {
 
   async ngOnInit() {
     try {
-      console.log(this.scheduleId)
       this.commentBySchedule = await this.commentService.getCommentBySchedule(this.scheduleId)
+      console.log(this.commentBySchedule)
     } catch (error) {
       console.log(error)
     }
