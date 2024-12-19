@@ -42,7 +42,7 @@ export class CreateScheduleComponent {
   async onSubmit() {
     try {
       const schedule = await this.scheduleService.createSchedule(this.newSchedule.value)
-      Swal.fire('Hecho', 'La nueva atracción se ha añadido al parque', 'success');
+      Swal.fire('Hecho', 'El horario se ha añadido', 'success');
     } catch (error) {
       console.log(error)
     }
