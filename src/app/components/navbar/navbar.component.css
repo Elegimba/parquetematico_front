@@ -10,6 +10,15 @@ nav.navbar {
 
 }
 
+.logo {
+    margin-left: 2rem;
+
+    img {
+        width: 60px;
+        padding-bottom: 2px;
+    }
+}
+
 .navbar-nav {
     display: flex;
     justify-content: center;
