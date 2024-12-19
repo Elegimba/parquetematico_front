@@ -1,7 +1,9 @@
-<form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
-    <textarea name="" cols="50" rows="20" formControlName="comments"></textarea>
-    <div>
-        <input type="submit" value="Enviar" class="btn btn-secondary">
-    </div>
-</form>
-<button class="btn btn-secondary">Cancelar</button>
+<div class="form-container">    
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <textarea name="" cols="50" rows="20" formControlName="comments"></textarea>
+        <div>
+            <input type="submit" value="Enviar" class="btn btn-secondary">
+            <button type="button" class="btn btn-secondary" (click)="hideComponent()">Cancelar</button>
+        </div>
+    </form>
+</div>

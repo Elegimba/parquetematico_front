@@ -65,5 +65,5 @@
         }
     </div>
     <app-new-comment [class]="{ textArea: commentBox, ntextArea: !commentBox }" [scheduleId]="dynamicScheduleId"
-        [userId]="userId"></app-new-comment>
+        [userId]="userId" (close)="hiddeCommentBox()" (addedComment)="updateComments()"></app-new-comment>
 </div>
