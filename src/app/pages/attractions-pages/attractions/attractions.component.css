@@ -2,11 +2,24 @@
     display: grid;
     margin: 0 auto;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    justify-items: center;
     gap: 1.5rem;
     padding: 2rem;
     background-color: #ffffff;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.custom-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #36ccb6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+span {
+    color: #f7b607;
 }
 
 .background {

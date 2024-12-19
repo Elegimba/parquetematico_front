@@ -5,7 +5,11 @@
 
     </div>
     }
+    <div class="text">
+        <h1 class="custom-title">Atracciones ID Boot <span>Park</span></h1>
+    </div>
     <div class="container">
+
         @for(att of arrAttractions; track att.id) {
         <div class="card">
             <app-attraction class="attraction-card" [attraction]="att"></app-attraction>
