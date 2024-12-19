@@ -1,18 +1,104 @@
 .form-container {
-    border: 5px solid black;
-    border-radius: 20px;
-    background-color: white;
-    overflow: hidden;
-
-    textarea {
-        display: block;
-        padding: 5px;
-        outline: none;
-        border: none;
+    form {
+        margin-top: 40%;
+        padding: 30px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 20px;
     }
 
-    div {
+    textarea {
+        border: 5px solid #36ccb6;
+        border-radius: 20px;
+        background-color: white;
+        overflow: hidden;
+        display: block;
+        padding: 20px;
+        outline: none;
+        resize: none;
+    }
+
+    div.buttons {
         display: flex;
         justify-content: space-evenly;
+    }
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #36ccb622;
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+}
+
+input[type="submit"],
+button[type="button"] {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #36ccb6;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #2ba495;
+    transform: translateY(-0.2rem);
+}
+
+button[type="button"] {
+    background-color: #f44336;
+}
+
+button[type="button"]:hover {
+    background-color: #d32f2f;
+}
+
+
+@media (max-width: 768px) {
+    .form-container form {
+        margin-top: 20%;
+        padding: 20px;
+    }
+
+    .form-container textarea {
+        width: 90%;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    div.buttons {
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 10px;
+    }
+
+    input[type="submit"],
+    button[type="button"] {
+        width: 90%;
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container textarea {
+        height: 200px;
+    }
+
+    input[type="submit"],
+    button[type="button"] {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
     }
 }
