@@ -1,0 +1,33 @@
+.container {
+    max-width: 40rem;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: #ffffff5e;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.background {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.container p {
+    font-size: 1.25rem;
+    color: #333333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    .container p {
+        font-size: 1.1rem;
+    }
+}

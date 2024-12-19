@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="text">
+        <h1 class="custom-title">Comentarios</h1>
+    </div>
     <input type="date" value={{today}} (change)="onChange($event)">
     @for(comment of arrComments; track comment.users_id) {
     <app-comment [comment]="comment"></app-comment>

@@ -1,27 +1,25 @@
-<div class="container col-lg-5 col-md-8 col-sm-10 mt-5 p-4 rounded shadow-lg" style="background-color: #f9f9f9;">
-    <h1 class="text-center text-primary mb-4">Editar Horario</h1>
-    <form [formGroup]="editSchForm" (ngSubmit)="onSubmit()">
-
-        <div class="mb-3">
-            <label class="form-label">Hora Inicio</label>
-            <input type="datetime-local" class="form-control" formControlName="start_time">
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Hora Finalizacion</label>
-            <input type="datetime-local" class="form-control" formControlName="end_time">
-        </div>
-
-        <div class="mb-3">
-            <select formControlName="attractions_id">
-                @for(attraction of arrAttractions; track attraction){
-                <option [value]="attraction.id">{{attraction.name}}</option>
-                }
-            </select>
-        </div>
-
-        <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
-    </form>
+<div class="container col-lg-5 col-md-8 col-sm-10 mt-5 p-4 rounded shadow-lg">
+    <div class="background">
+        <h1 class=" text-center mb-4">Editar Horario</h1>
+        <form [formGroup]="editSchForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Hora Inicio</label>
+                <input type="datetime-local" class="form-control" formControlName="start_time">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Hora Finalizacion</label>
+                <input type="datetime-local" class="form-control" formControlName="end_time">
+            </div>
+            <div class="mb-3">
+                <select formControlName="attractions_id">
+                    @for(attraction of arrAttractions; track attraction){
+                    <option [value]="attraction.id">{{attraction.name}}</option>
+                    }
+                </select>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
 </div>

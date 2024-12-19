@@ -30,10 +30,13 @@ export class AllCommentsComponent {
   async getCommentsByDate(date: any) {
 
     const arrCommentsDate = await this.commentsService.getAll()
+    console.log(arrCommentsDate)
     const arrfiltrado = arrCommentsDate.filter((comment) => {
+      console.log(dayjs(comment.schedule.start_time).format('YYYY-MM-DD'), dayjs(date).format('YYYY-MM-DD'))
       return dayjs(comment.schedule.start_time).format('YYYY-MM-DD') === dayjs(date).format('YYYY-MM-DD')
     })
     this.arrComments = arrfiltrado
+    console.log(arrfiltrado)
   }
 
   onChange($event: any) {

@@ -6,6 +6,7 @@ import { IUser } from '../../../interfaces/iuser.interface';
 import { AttractionsService } from '../../../services/attractions.service';
 import { StaffService } from '../../../services/staff.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-schedule',
@@ -19,6 +20,7 @@ export class CreateScheduleComponent {
   scheduleService = inject(ScheduleService)
   attractionService = inject(AttractionsService)
   staffServices = inject(StaffService)
+  router = inject(Router)
 
   arrAttractions: IAttraction[] = []
   arrWorkers: IUser[] = []
@@ -43,6 +45,7 @@ export class CreateScheduleComponent {
     try {
       const schedule = await this.scheduleService.createSchedule(this.newSchedule.value)
       Swal.fire('Hecho', 'El horario se ha añadido', 'success');
+      this.router.navigateByUrl('/users')
     } catch (error) {
       console.log(error)
     }
