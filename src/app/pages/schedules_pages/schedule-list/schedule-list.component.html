@@ -35,17 +35,6 @@
                         <button class="btn btn-outline-primary" [routerLink]="['/', schedule.id, 'comments']">
                             Ver comentarios
                         </button>
-                        @if(usersService.isWhosLogged(user?.id)){
-                        <button class="btn btn-outline-primary" (click)="editComment()">
-                            Editar comentario
-                        </button>
-                        }
-                        @if(usersService.isAdmin()) {
-                        <button class="btn btn-outline-danger2">
-                            Eliminar comentario
-                        </button>
-
-                        }
                         }
                         @if(usersService.isAdmin()) {
                         <button class="btn btn-outline-primary" [routerLink]="['/schedules', schedule.id]">Editar
@@ -66,4 +55,5 @@
     </div>
     <app-new-comment [class]="{ textArea: commentBox, ntextArea: !commentBox }" [scheduleId]="dynamicScheduleId"
         [userId]="userId" (close)="hiddeCommentBox()" (addedComment)="updateComments()"></app-new-comment>
+    
 </div>
